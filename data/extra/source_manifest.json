@@ -1,0 +1,9 @@
+{
+  "file": "olist_geolocation_dataset.csv",
+  "rows": 1000163,
+  "distinct_zip_prefixes": 19015,
+  "exact_duplicate_extra_rows": 261831,
+  "max_rows_per_prefix": 1146,
+  "sha256": "b514f6fc991b9566aeba02aa5d67e2c3630f034b60a0e05aa0d082a3b66d88d6",
+  "scope": "Дополнительный файл Olist; не входит в 8 таблиц raw хакатона"
+}

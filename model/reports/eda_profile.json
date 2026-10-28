@@ -1,0 +1,1654 @@
+{
+  "scope": "Exploratory validation of downloaded source CSVs; not final SQL answers from core",
+  "repository": "https://github.com/olist/work-at-olist-data",
+  "tables": {
+    "orders": {
+      "file": "olist_orders_dataset.csv",
+      "rows": 99441,
+      "expected_rows": 99441,
+      "row_count_matches": true,
+      "columns": [
+        "order_id",
+        "customer_id",
+        "order_status",
+        "order_purchase_timestamp",
+        "order_approved_at",
+        "order_delivered_carrier_date",
+        "order_delivered_customer_date",
+        "order_estimated_delivery_date"
+      ],
+      "full_duplicate_extra_rows": 0,
+      "empty_values": {
+        "order_id": 0,
+        "customer_id": 0,
+        "order_status": 0,
+        "order_purchase_timestamp": 0,
+        "order_approved_at": 160,
+        "order_delivered_carrier_date": 1783,
+        "order_delivered_customer_date": 2965,
+        "order_estimated_delivery_date": 0
+      },
+      "distinct_values": {
+        "order_id": 99441,
+        "customer_id": 99441,
+        "order_status": 8,
+        "order_purchase_timestamp": 98875,
+        "order_approved_at": 90734,
+        "order_delivered_carrier_date": 81019,
+        "order_delivered_customer_date": 95665,
+        "order_estimated_delivery_date": 459
+      },
+      "sha256": "8df58ef3d2d7e9944010f7beecd9b75367f5588ec6e3c91cec19ae3345ef9ecf"
+    },
+    "items": {
+      "file": "olist_order_items_dataset.csv",
+      "rows": 112650,
+      "expected_rows": 112650,
+      "row_count_matches": true,
+      "columns": [
+        "order_id",
+        "order_item_id",
+        "product_id",
+        "seller_id",
+        "shipping_limit_date",
+        "price",
+        "freight_value"
+      ],
+      "full_duplicate_extra_rows": 0,
+      "empty_values": {
+        "order_id": 0,
+        "order_item_id": 0,
+        "product_id": 0,
+        "seller_id": 0,
+        "shipping_limit_date": 0,
+        "price": 0,
+        "freight_value": 0
+      },
+      "distinct_values": {
+        "order_id": 98666,
+        "order_item_id": 21,
+        "product_id": 32951,
+        "seller_id": 3095,
+        "shipping_limit_date": 93318,
+        "price": 5968,
+        "freight_value": 7010
+      },
+      "sha256": "4f6abdbbc94036d0df4a76fa0520c072e31a40119d70f7f370fba1e2285d2bcb"
+    },
+    "payments": {
+      "file": "olist_order_payments_dataset.csv",
+      "rows": 103886,
+      "expected_rows": 103886,
+      "row_count_matches": true,
+      "columns": [
+        "order_id",
+        "payment_sequential",
+        "payment_type",
+        "payment_installments",
+        "payment_value"
+      ],
+      "full_duplicate_extra_rows": 0,
+      "empty_values": {
+        "order_id": 0,
+        "payment_sequential": 0,
+        "payment_type": 0,
+        "payment_installments": 0,
+        "payment_value": 0
+      },
+      "distinct_values": {
+        "order_id": 99440,
+        "payment_sequential": 29,
+        "payment_type": 5,
+        "payment_installments": 24,
+        "payment_value": 29077
+      },
+      "sha256": "61674868ed7b872aac3dcd95bf774448a88f6426b183f21be55f75af021ffdec"
+    },
+    "reviews": {
+      "file": "olist_order_reviews_dataset.csv",
+      "rows": 99224,
+      "expected_rows": 99224,
+      "row_count_matches": true,
+      "columns": [
+        "review_id",
+        "order_id",
+        "review_score",
+        "review_comment_title",
+        "review_comment_message",
+        "review_creation_date",
+        "review_answer_timestamp"
+      ],
+      "full_duplicate_extra_rows": 0,
+      "empty_values": {
+        "review_id": 0,
+        "order_id": 0,
+        "review_score": 0,
+        "review_comment_title": 87656,
+        "review_comment_message": 58247,
+        "review_creation_date": 0,
+        "review_answer_timestamp": 0
+      },
+      "distinct_values": {
+        "review_id": 98410,
+        "order_id": 98673,
+        "review_score": 5,
+        "review_comment_title": 4528,
+        "review_comment_message": 36160,
+        "review_creation_date": 636,
+        "review_answer_timestamp": 98248
+      },
+      "sha256": "012b61c7593e34f51fa614efdf802b9c7056ce6aae5307ddb93236e7cfc797d7"
+    },
+    "products": {
+      "file": "olist_products_dataset.csv",
+      "rows": 32951,
+      "expected_rows": 32951,
+      "row_count_matches": true,
+      "columns": [
+        "product_id",
+        "product_category_name",
+        "product_name_lenght",
+        "product_description_lenght",
+        "product_photos_qty",
+        "product_weight_g",
+        "product_length_cm",
+        "product_height_cm",
+        "product_width_cm"
+      ],
+      "full_duplicate_extra_rows": 0,
+      "empty_values": {
+        "product_id": 0,
+        "product_category_name": 610,
+        "product_name_lenght": 610,
+        "product_description_lenght": 610,
+        "product_photos_qty": 610,
+        "product_weight_g": 2,
+        "product_length_cm": 2,
+        "product_height_cm": 2,
+        "product_width_cm": 2
+      },
+      "distinct_values": {
+        "product_id": 32951,
+        "product_category_name": 74,
+        "product_name_lenght": 67,
+        "product_description_lenght": 2961,
+        "product_photos_qty": 20,
+        "product_weight_g": 2205,
+        "product_length_cm": 100,
+        "product_height_cm": 103,
+        "product_width_cm": 96
+      },
+      "sha256": "3e6569628a17fbc75fd206ee357b59e20364b9afa90f5b6cd5b4d624c58aa9cc"
+    },
+    "sellers": {
+      "file": "olist_sellers_dataset.csv",
+      "rows": 3095,
+      "expected_rows": 3095,
+      "row_count_matches": true,
+      "columns": [
+        "seller_id",
+        "seller_zip_code_prefix",
+        "seller_city",
+        "seller_state"
+      ],
+      "full_duplicate_extra_rows": 0,
+      "empty_values": {
+        "seller_id": 0,
+        "seller_zip_code_prefix": 0,
+        "seller_city": 0,
+        "seller_state": 0
+      },
+      "distinct_values": {
+        "seller_id": 3095,
+        "seller_zip_code_prefix": 2246,
+        "seller_city": 611,
+        "seller_state": 23
+      },
+      "sha256": "31eb9bd50d684526a78f2389413ce61841e97692de7b828fe7d956b534586312"
+    },
+    "customers": {
+      "file": "olist_customers_dataset.csv",
+      "rows": 99441,
+      "expected_rows": 99441,
+      "row_count_matches": true,
+      "columns": [
+        "customer_id",
+        "customer_unique_id",
+        "customer_zip_code_prefix",
+        "customer_city",
+        "customer_state"
+      ],
+      "full_duplicate_extra_rows": 0,
+      "empty_values": {
+        "customer_id": 0,
+        "customer_unique_id": 0,
+        "customer_zip_code_prefix": 0,
+        "customer_city": 0,
+        "customer_state": 0
+      },
+      "distinct_values": {
+        "customer_id": 99441,
+        "customer_unique_id": 96096,
+        "customer_zip_code_prefix": 14995,
+        "customer_city": 4119,
+        "customer_state": 27
+      },
+      "sha256": "c26c17f59f3027a6a0dbeb8f1fa373c38f3323ecc84f225a8f4820e5bb288df8"
+    },
+    "categories": {
+      "file": "product_category_name_translation.csv",
+      "rows": 71,
+      "expected_rows": 71,
+      "row_count_matches": true,
+      "columns": [
+        "product_category_name",
+        "product_category_name_english"
+      ],
+      "full_duplicate_extra_rows": 0,
+      "empty_values": {
+        "product_category_name": 0,
+        "product_category_name_english": 0
+      },
+      "distinct_values": {
+        "product_category_name": 71,
+        "product_category_name_english": 71
+      },
+      "sha256": "a81f0d1f27b27e7293f761bc79e3ce8f348ee39c4b3ed3e49bde38f478586278"
+    }
+  },
+  "keys": {
+    "orders": [
+      {
+        "columns": [
+          "order_id"
+        ],
+        "unique": true,
+        "rows_in_duplicate_groups": 0,
+        "extra_duplicate_rows": 0,
+        "blank_key_rows": 0,
+        "examples": []
+      },
+      {
+        "columns": [
+          "customer_id"
+        ],
+        "unique": true,
+        "rows_in_duplicate_groups": 0,
+        "extra_duplicate_rows": 0,
+        "blank_key_rows": 0,
+        "examples": []
+      }
+    ],
+    "items": [
+      {
+        "columns": [
+          "order_id",
+          "order_item_id"
+        ],
+        "unique": true,
+        "rows_in_duplicate_groups": 0,
+        "extra_duplicate_rows": 0,
+        "blank_key_rows": 0,
+        "examples": []
+      }
+    ],
+    "payments": [
+      {
+        "columns": [
+          "order_id",
+          "payment_sequential"
+        ],
+        "unique": true,
+        "rows_in_duplicate_groups": 0,
+        "extra_duplicate_rows": 0,
+        "blank_key_rows": 0,
+        "examples": []
+      }
+    ],
+    "reviews": [
+      {
+        "columns": [
+          "review_id"
+        ],
+        "unique": false,
+        "rows_in_duplicate_groups": 1603,
+        "extra_duplicate_rows": 814,
+        "blank_key_rows": 0,
+        "examples": [
+          {
+            "review_id": "28642ce6250b94cc72bc85960aec6c62"
+          },
+          {
+            "review_id": "a0a641414ff718ca079b3967ef5c2495"
+          },
+          {
+            "review_id": "f4d74b17cd63ee35efa82cd2567de911"
+          },
+          {
+            "review_id": "ecbaf1fce7d2c09bfab46f89065afeaf"
+          },
+          {
+            "review_id": "6b1de94de0f4bd84dfc4136818242faa"
+          },
+          {
+            "review_id": "957011305e7a4b6c8a266eeeb8e0316d"
+          }
+        ]
+      },
+      {
+        "columns": [
+          "order_id"
+        ],
+        "unique": false,
+        "rows_in_duplicate_groups": 1098,
+        "extra_duplicate_rows": 551,
+        "blank_key_rows": 0,
+        "examples": [
+          {
+            "order_id": "cf73e2cb1f4a9480ed70c154da3d954a"
+          },
+          {
+            "order_id": "169d7e0fd71d624d306f132acd791cbe"
+          },
+          {
+            "order_id": "1c308eca3f339414a92e518e2a2e5ee9"
+          },
+          {
+            "order_id": "2002ea16e75277eaa0b5d78632048540"
+          },
+          {
+            "order_id": "1d297b4800ed1a3c5b0944d84c01ee99"
+          },
+          {
+            "order_id": "0176a6846bcb3b0d3aa3116a9a768597"
+          }
+        ]
+      },
+      {
+        "columns": [
+          "order_id",
+          "review_id"
+        ],
+        "unique": true,
+        "rows_in_duplicate_groups": 0,
+        "extra_duplicate_rows": 0,
+        "blank_key_rows": 0,
+        "examples": []
+      }
+    ],
+    "products": [
+      {
+        "columns": [
+          "product_id"
+        ],
+        "unique": true,
+        "rows_in_duplicate_groups": 0,
+        "extra_duplicate_rows": 0,
+        "blank_key_rows": 0,
+        "examples": []
+      }
+    ],
+    "sellers": [
+      {
+        "columns": [
+          "seller_id"
+        ],
+        "unique": true,
+        "rows_in_duplicate_groups": 0,
+        "extra_duplicate_rows": 0,
+        "blank_key_rows": 0,
+        "examples": []
+      }
+    ],
+    "customers": [
+      {
+        "columns": [
+          "customer_id"
+        ],
+        "unique": true,
+        "rows_in_duplicate_groups": 0,
+        "extra_duplicate_rows": 0,
+        "blank_key_rows": 0,
+        "examples": []
+      },
+      {
+        "columns": [
+          "customer_unique_id"
+        ],
+        "unique": false,
+        "rows_in_duplicate_groups": 6342,
+        "extra_duplicate_rows": 3345,
+        "blank_key_rows": 0,
+        "examples": [
+          {
+            "customer_unique_id": "4c93744516667ad3b8f1fb645a3116a4"
+          },
+          {
+            "customer_unique_id": "1175e95fb47ddff9de6b2b06188f7e0d"
+          },
+          {
+            "customer_unique_id": "295c05e81917928d76245e842748184d"
+          },
+          {
+            "customer_unique_id": "e9dd12dca17352644a959d9dea133935"
+          },
+          {
+            "customer_unique_id": "e079b18794454de9d2be5c12b4392294"
+          },
+          {
+            "customer_unique_id": "c9158d089637ab443c78984d20da7fc0"
+          }
+        ]
+      }
+    ],
+    "categories": [
+      {
+        "columns": [
+          "product_category_name"
+        ],
+        "unique": true,
+        "rows_in_duplicate_groups": 0,
+        "extra_duplicate_rows": 0,
+        "blank_key_rows": 0,
+        "examples": []
+      }
+    ]
+  },
+  "foreign_keys": {
+    "orders.customer_id->customers.customer_id": {
+      "missing_rows": 0,
+      "missing_distinct_keys": 0
+    },
+    "items.order_id->orders.order_id": {
+      "missing_rows": 0,
+      "missing_distinct_keys": 0
+    },
+    "items.product_id->products.product_id": {
+      "missing_rows": 0,
+      "missing_distinct_keys": 0
+    },
+    "items.seller_id->sellers.seller_id": {
+      "missing_rows": 0,
+      "missing_distinct_keys": 0
+    },
+    "payments.order_id->orders.order_id": {
+      "missing_rows": 0,
+      "missing_distinct_keys": 0
+    },
+    "reviews.order_id->orders.order_id": {
+      "missing_rows": 0,
+      "missing_distinct_keys": 0
+    }
+  },
+  "total_rows": 550759,
+  "money_fields": {
+    "items.price": {
+      "invalid_rows": 0,
+      "invalid_examples": [],
+      "negative_rows": 0,
+      "zero_rows": 0,
+      "sum": "13591643.70",
+      "min": "0.85",
+      "max": "6735.00"
+    },
+    "items.freight_value": {
+      "invalid_rows": 0,
+      "invalid_examples": [],
+      "negative_rows": 0,
+      "zero_rows": 383,
+      "sum": "2256599.44",
+      "min": "0.00",
+      "max": "409.68"
+    },
+    "payments.payment_value": {
+      "invalid_rows": 0,
+      "invalid_examples": [],
+      "negative_rows": 0,
+      "zero_rows": 9,
+      "sum": "16008872.12",
+      "min": "0.00",
+      "max": "13664.08"
+    }
+  },
+  "numeric_fields": {
+    "items.order_item_id": {
+      "missing_rows": 0,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 0,
+      "min": 1,
+      "max": 21
+    },
+    "payments.payment_sequential": {
+      "missing_rows": 0,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 0,
+      "min": 1,
+      "max": 29
+    },
+    "payments.payment_installments": {
+      "missing_rows": 0,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 2,
+      "min": 0,
+      "max": 24
+    },
+    "reviews.review_score": {
+      "missing_rows": 0,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 0,
+      "min": 1,
+      "max": 5
+    },
+    "products.product_name_lenght": {
+      "missing_rows": 610,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 0,
+      "min": 5.0,
+      "max": 76.0
+    },
+    "products.product_description_lenght": {
+      "missing_rows": 610,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 0,
+      "min": 4.0,
+      "max": 3992.0
+    },
+    "products.product_photos_qty": {
+      "missing_rows": 610,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 0,
+      "min": 1.0,
+      "max": 20.0
+    },
+    "products.product_weight_g": {
+      "missing_rows": 2,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 4,
+      "min": 0.0,
+      "max": 40425.0
+    },
+    "products.product_length_cm": {
+      "missing_rows": 2,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 0,
+      "min": 7.0,
+      "max": 105.0
+    },
+    "products.product_height_cm": {
+      "missing_rows": 2,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 0,
+      "min": 2.0,
+      "max": 105.0
+    },
+    "products.product_width_cm": {
+      "missing_rows": 2,
+      "invalid_nonempty_rows": 0,
+      "negative_rows": 0,
+      "zero_rows": 0,
+      "min": 6.0,
+      "max": 118.0
+    }
+  },
+  "date_fields": {
+    "orders.order_purchase_timestamp": {
+      "missing_rows": 0,
+      "invalid_nonempty_rows": 0,
+      "min": "2016-09-04T21:15:19",
+      "max": "2018-10-17T17:30:18"
+    },
+    "orders.order_approved_at": {
+      "missing_rows": 160,
+      "invalid_nonempty_rows": 0,
+      "min": "2016-09-15T12:16:38",
+      "max": "2018-09-03T17:40:06"
+    },
+    "orders.order_delivered_carrier_date": {
+      "missing_rows": 1783,
+      "invalid_nonempty_rows": 0,
+      "min": "2016-10-08T10:34:01",
+      "max": "2018-09-11T19:48:28"
+    },
+    "orders.order_delivered_customer_date": {
+      "missing_rows": 2965,
+      "invalid_nonempty_rows": 0,
+      "min": "2016-10-11T13:46:32",
+      "max": "2018-10-17T13:22:46"
+    },
+    "orders.order_estimated_delivery_date": {
+      "missing_rows": 0,
+      "invalid_nonempty_rows": 0,
+      "min": "2016-09-30T00:00:00",
+      "max": "2018-11-12T00:00:00"
+    },
+    "items.shipping_limit_date": {
+      "missing_rows": 0,
+      "invalid_nonempty_rows": 0,
+      "min": "2016-09-19T00:15:34",
+      "max": "2020-04-09T22:35:08"
+    },
+    "reviews.review_creation_date": {
+      "missing_rows": 0,
+      "invalid_nonempty_rows": 0,
+      "min": "2016-10-02T00:00:00",
+      "max": "2018-08-31T00:00:00"
+    },
+    "reviews.review_answer_timestamp": {
+      "missing_rows": 0,
+      "invalid_nonempty_rows": 0,
+      "min": "2016-10-07T18:32:28",
+      "max": "2018-10-29T12:27:35"
+    }
+  },
+  "statuses": {
+    "delivered": 96478,
+    "shipped": 1107,
+    "canceled": 625,
+    "unavailable": 609,
+    "invoiced": 314,
+    "processing": 301,
+    "created": 5,
+    "approved": 2
+  },
+  "cardinality": {
+    "orders_with_multiple_items": 9803,
+    "orders_with_multiple_sellers": 1278,
+    "orders_with_multiple_payments": 2961,
+    "orders_with_multiple_reviews": 547,
+    "max_items_per_order": 21.0,
+    "max_sellers_per_order": 5.0,
+    "max_payments_per_order": 29.0,
+    "max_reviews_per_order": 3.0,
+    "orders_without_items": 775,
+    "orders_without_payments": 1,
+    "orders_without_reviews": 768,
+    "orders_without_items_by_status": {
+      "unavailable": 603,
+      "canceled": 164,
+      "created": 5,
+      "invoiced": 2,
+      "shipped": 1
+    },
+    "orders_without_payments_examples": [
+      {
+        "order_id": "bfbd0f9bdef84302105ad712db648a6c",
+        "order_status": "delivered",
+        "order_purchase_timestamp": "2016-09-15 12:16:38"
+      }
+    ]
+  },
+  "item_sequence": {
+    "orders_with_sequence_gaps_or_bad_start": 0,
+    "quantity_column_exists": false
+  },
+  "payments": {
+    "types": {
+      "credit_card": 76795,
+      "boleto": 19784,
+      "voucher": 5775,
+      "debit_card": 1529,
+      "not_defined": 3
+    },
+    "installment_distribution": {
+      "1": 52543,
+      "2": 12413,
+      "3": 10461,
+      "4": 7098,
+      "10": 5331,
+      "5": 5239,
+      "8": 4268,
+      "6": 3920,
+      "7": 1626,
+      "9": 644,
+      "12": 133,
+      "15": 74,
+      "18": 27,
+      "11": 23,
+      "24": 18,
+      "20": 17,
+      "13": 16,
+      "14": 15,
+      "17": 8,
+      "16": 5,
+      "21": 3,
+      "0": 2,
+      "22": 1,
+      "23": 1
+    },
+    "zero_installment_rows": 2
+  },
+  "reviews": {
+    "score_distribution": {
+      "5": 57328,
+      "4": 19142,
+      "1": 11424,
+      "3": 8179,
+      "2": 3151
+    },
+    "invalid_score_rows": 0,
+    "creation_before_delivery_rows": 8320,
+    "answer_before_creation_rows": 0,
+    "answer_before_delivery_rows": 4795
+  },
+  "date_anomalies": {
+    "delivered_missing_approved_at": 14,
+    "delivered_missing_carrier_date": 2,
+    "delivered_missing_customer_date": 8,
+    "approved_before_purchase": 0,
+    "carrier_before_purchase": 166,
+    "customer_delivery_before_purchase": 0,
+    "customer_delivery_before_carrier": 23,
+    "carrier_before_approval": 1359,
+    "non_delivered_status_with_customer_delivery_date": 6
+  },
+  "delivery": {
+    "delivered_orders": 96478,
+    "orders_with_actual_and_estimated_date": 96470,
+    "late_orders_calendar_day_rule": 6534,
+    "late_percent": 6.7730900798175595,
+    "median_days": 10.217476851851853,
+    "p90_days": 23.09637731481482,
+    "p95_days": 29.274046296296298,
+    "late_review_order_mean": 2.2718225983388183,
+    "on_time_review_order_mean": 4.290589164793966,
+    "late_reviewed_orders": 6381,
+    "on_time_reviewed_orders": 89443
+  },
+  "reconciliation": {
+    "orders_with_items_and_payments": 98665,
+    "exact_matches": 98026,
+    "nonzero_differences": 639,
+    "differences_over_one_cent": 366,
+    "total_difference": "-1819.51",
+    "largest_absolute_examples": [
+      {
+        "order_id": "8fb4e4bd46f9802e9179726dd20019a5",
+        "order_status": "delivered",
+        "order_total_cents": 70000,
+        "paid_cents": 36307,
+        "difference_cents": -33693
+      },
+      {
+        "order_id": "466f73a6394012b9c7cfe801be0c04c3",
+        "order_status": "delivered",
+        "order_total_cents": 70000,
+        "paid_cents": 36870,
+        "difference_cents": -33130
+      },
+      {
+        "order_id": "f06059b8f4dc49c4f76378b7715a63b0",
+        "order_status": "delivered",
+        "order_total_cents": 58800,
+        "paid_cents": 30726,
+        "difference_cents": -28074
+      },
+      {
+        "order_id": "50cc103bda59bd29c59f33e00e19b4e7",
+        "order_status": "delivered",
+        "order_total_cents": 58800,
+        "paid_cents": 32090,
+        "difference_cents": -26710
+      },
+      {
+        "order_id": "343ee80178e16012130cb0007eac5888",
+        "order_status": "delivered",
+        "order_total_cents": 58800,
+        "paid_cents": 32220,
+        "difference_cents": -26580
+      }
+    ]
+  },
+  "join_fanout": {
+    "left_join_orders_items_payments_reviews_rows": 119143,
+    "correct_delivered_item_revenue": "13221498.11",
+    "naive_left_join_delivered_item_revenue": "13876471.73"
+  },
+  "category_quality": {
+    "products_without_category": 610,
+    "nonempty_portuguese_categories": 73,
+    "products_with_untranslated_category": 13,
+    "untranslated_categories": {
+      "portateis_cozinha_e_preparadores_de_alimentos": 10,
+      "pc_gamer": 3
+    }
+  },
+  "source_question_checks": {
+    "q1": {
+      "rows": 24,
+      "zero_revenue_months": [
+        "2016-11"
+      ],
+      "zero_order_months": [
+        "2016-11"
+      ],
+      "total_revenue": "13221498.11",
+      "monthly": [
+        {
+          "month": "2016-09",
+          "all_orders": 4,
+          "delivered_orders": 1,
+          "revenue": "134.97"
+        },
+        {
+          "month": "2016-10",
+          "all_orders": 324,
+          "delivered_orders": 265,
+          "revenue": "40325.11"
+        },
+        {
+          "month": "2016-11",
+          "all_orders": 0,
+          "delivered_orders": 0,
+          "revenue": "0.00"
+        },
+        {
+          "month": "2016-12",
+          "all_orders": 1,
+          "delivered_orders": 1,
+          "revenue": "10.90"
+        },
+        {
+          "month": "2017-01",
+          "all_orders": 800,
+          "delivered_orders": 750,
+          "revenue": "111798.36"
+        },
+        {
+          "month": "2017-02",
+          "all_orders": 1780,
+          "delivered_orders": 1653,
+          "revenue": "234223.40"
+        },
+        {
+          "month": "2017-03",
+          "all_orders": 2682,
+          "delivered_orders": 2546,
+          "revenue": "359198.85"
+        },
+        {
+          "month": "2017-04",
+          "all_orders": 2404,
+          "delivered_orders": 2303,
+          "revenue": "340669.68"
+        },
+        {
+          "month": "2017-05",
+          "all_orders": 3700,
+          "delivered_orders": 3546,
+          "revenue": "489338.25"
+        },
+        {
+          "month": "2017-06",
+          "all_orders": 3245,
+          "delivered_orders": 3135,
+          "revenue": "421923.37"
+        },
+        {
+          "month": "2017-07",
+          "all_orders": 4026,
+          "delivered_orders": 3872,
+          "revenue": "481604.52"
+        },
+        {
+          "month": "2017-08",
+          "all_orders": 4331,
+          "delivered_orders": 4193,
+          "revenue": "554699.70"
+        },
+        {
+          "month": "2017-09",
+          "all_orders": 4285,
+          "delivered_orders": 4150,
+          "revenue": "607399.67"
+        },
+        {
+          "month": "2017-10",
+          "all_orders": 4631,
+          "delivered_orders": 4478,
+          "revenue": "648247.65"
+        },
+        {
+          "month": "2017-11",
+          "all_orders": 7544,
+          "delivered_orders": 7289,
+          "revenue": "987765.37"
+        },
+        {
+          "month": "2017-12",
+          "all_orders": 5673,
+          "delivered_orders": 5513,
+          "revenue": "726033.19"
+        },
+        {
+          "month": "2018-01",
+          "all_orders": 7269,
+          "delivered_orders": 7069,
+          "revenue": "924645.00"
+        },
+        {
+          "month": "2018-02",
+          "all_orders": 6728,
+          "delivered_orders": 6555,
+          "revenue": "826437.13"
+        },
+        {
+          "month": "2018-03",
+          "all_orders": 7211,
+          "delivered_orders": 7003,
+          "revenue": "953356.25"
+        },
+        {
+          "month": "2018-04",
+          "all_orders": 6939,
+          "delivered_orders": 6798,
+          "revenue": "973534.09"
+        },
+        {
+          "month": "2018-05",
+          "all_orders": 6873,
+          "delivered_orders": 6749,
+          "revenue": "977544.69"
+        },
+        {
+          "month": "2018-06",
+          "all_orders": 6167,
+          "delivered_orders": 6099,
+          "revenue": "856077.86"
+        },
+        {
+          "month": "2018-07",
+          "all_orders": 6292,
+          "delivered_orders": 6159,
+          "revenue": "867953.46"
+        },
+        {
+          "month": "2018-08",
+          "all_orders": 6512,
+          "delivered_orders": 6351,
+          "revenue": "838576.64"
+        }
+      ]
+    },
+    "q2": {
+      "top_ten": [
+        {
+          "seller_id": "4869f7a5dfa277a7dca6462dcf3b52b2",
+          "order_count": 1124,
+          "units": 1148,
+          "seller_city": "guariba",
+          "seller_state": "SP",
+          "revenue": "226987.93"
+        },
+        {
+          "seller_id": "53243585a1d6dc2643021fd1853d8905",
+          "order_count": 348,
+          "units": 400,
+          "seller_city": "lauro de freitas",
+          "seller_state": "BA",
+          "revenue": "217940.44"
+        },
+        {
+          "seller_id": "4a3ca9315b744ce9f8e9374361493884",
+          "order_count": 1772,
+          "units": 1949,
+          "seller_city": "ibitinga",
+          "seller_state": "SP",
+          "revenue": "196882.12"
+        },
+        {
+          "seller_id": "fa1c13f2614d7b5c4749cbc52fecda94",
+          "order_count": 578,
+          "units": 579,
+          "seller_city": "sumare",
+          "seller_state": "SP",
+          "revenue": "190917.14"
+        },
+        {
+          "seller_id": "7c67e1448b00f6e969d365cea6b010ab",
+          "order_count": 973,
+          "units": 1355,
+          "seller_city": "itaquaquecetuba",
+          "seller_state": "SP",
+          "revenue": "186570.05"
+        },
+        {
+          "seller_id": "7e93a43ef30c4f03f38b393420bc753a",
+          "order_count": 319,
+          "units": 322,
+          "seller_city": "barueri",
+          "seller_state": "SP",
+          "revenue": "165981.49"
+        },
+        {
+          "seller_id": "da8622b14eb17ae2831f4ac5b9dab84a",
+          "order_count": 1311,
+          "units": 1548,
+          "seller_city": "piracicaba",
+          "seller_state": "SP",
+          "revenue": "159816.87"
+        },
+        {
+          "seller_id": "7a67c85e85bb2ce8582c35f2203ad736",
+          "order_count": 1145,
+          "units": 1155,
+          "seller_city": "sao paulo",
+          "seller_state": "SP",
+          "revenue": "139658.69"
+        },
+        {
+          "seller_id": "1025f0e2d44d7041d6cf58b6550e0bfa",
+          "order_count": 910,
+          "units": 1420,
+          "seller_city": "sao paulo",
+          "seller_state": "SP",
+          "revenue": "138208.56"
+        },
+        {
+          "seller_id": "955fee9216a65b617aa5c0531780ce60",
+          "order_count": 1261,
+          "units": 1472,
+          "seller_city": "sao paulo",
+          "seller_state": "SP",
+          "revenue": "131836.71"
+        }
+      ]
+    },
+    "q3": {
+      "aov_variants": {
+        "all_orders_item_plus_freight_per_order_with_items": "160.63",
+        "all_orders_item_plus_freight_per_all_orders": "159.37",
+        "all_orders_payments_per_order_with_payments": "160.99",
+        "all_orders_payments_per_all_orders": "160.99",
+        "delivered_item_plus_freight_per_order_with_items": "159.88",
+        "delivered_item_plus_freight_per_all_orders": "159.88",
+        "delivered_payments_per_order_with_payments": "159.86",
+        "delivered_payments_per_all_orders": "159.85",
+        "delivered_purchase_period_item_plus_freight_per_order_with_items": "159.88",
+        "delivered_purchase_period_item_plus_freight_per_all_orders": "159.88",
+        "delivered_purchase_period_payments_per_order_with_payments": "159.86",
+        "delivered_purchase_period_payments_per_all_orders": "159.85"
+      },
+      "variants_matching_control_159_88": [
+        "delivered_item_plus_freight_per_order_with_items",
+        "delivered_item_plus_freight_per_all_orders",
+        "delivered_purchase_period_item_plus_freight_per_order_with_items",
+        "delivered_purchase_period_item_plus_freight_per_all_orders"
+      ],
+      "delivered_mean_lines_per_order": 1.1421982213561641,
+      "delivered_mean_units_per_order": 1.1421982213561641,
+      "delivered_mean_item_price": "119.98",
+      "delivered_mean_line_with_freight": "139.97"
+    },
+    "q4": {
+      "all_order_buyers": 96096,
+      "all_order_repeat_buyers": 2997,
+      "all_order_repeat_percent": 3.118756243756244,
+      "delivered_buyers": 93358,
+      "delivered_repeat_buyers": 2801,
+      "delivered_repeat_percent": 3.0002784978255748
+    },
+    "q5": {
+      "categories": 74,
+      "total_revenue": "13221498.11",
+      "largest_category": [
+        {
+          "category_pt": "beleza_saude",
+          "item_rows": 9465,
+          "category_en": "health_beauty",
+          "revenue": "1233131.72",
+          "share_percent": 9.32671706141476
+        }
+      ],
+      "unknown_category": [
+        {
+          "category_pt": "__UNKNOWN__",
+          "item_rows": 1537,
+          "category_en": null,
+          "revenue": "170726.63",
+          "share_percent": 1.2912805234292772
+        }
+      ],
+      "all_categories": [
+        {
+          "category_pt": "beleza_saude",
+          "item_rows": 9465,
+          "category_en": "health_beauty",
+          "revenue": "1233131.72",
+          "share_percent": 9.32671706141476
+        },
+        {
+          "category_pt": "relogios_presentes",
+          "item_rows": 5859,
+          "category_en": "watches_gifts",
+          "revenue": "1166176.98",
+          "share_percent": 8.820308941525841
+        },
+        {
+          "category_pt": "cama_mesa_banho",
+          "item_rows": 10953,
+          "category_en": "bed_bath_table",
+          "revenue": "1023434.76",
+          "share_percent": 7.740686807843139
+        },
+        {
+          "category_pt": "esporte_lazer",
+          "item_rows": 8431,
+          "category_en": "sports_leisure",
+          "revenue": "954852.55",
+          "share_percent": 7.221969417200937
+        },
+        {
+          "category_pt": "informatica_acessorios",
+          "item_rows": 7644,
+          "category_en": "computers_accessories",
+          "revenue": "888724.61",
+          "share_percent": 6.721814749024685
+        },
+        {
+          "category_pt": "moveis_decoracao",
+          "item_rows": 8160,
+          "category_en": "furniture_decor",
+          "revenue": "711927.69",
+          "share_percent": 5.384621954917029
+        },
+        {
+          "category_pt": "utilidades_domesticas",
+          "item_rows": 6795,
+          "category_en": "housewares",
+          "revenue": "615628.69",
+          "share_percent": 4.6562703021858995
+        },
+        {
+          "category_pt": "cool_stuff",
+          "item_rows": 3718,
+          "category_en": "cool_stuff",
+          "revenue": "610204.10",
+          "share_percent": 4.615241744341179
+        },
+        {
+          "category_pt": "automotivo",
+          "item_rows": 4140,
+          "category_en": "auto",
+          "revenue": "578966.65",
+          "share_percent": 4.378979183622937
+        },
+        {
+          "category_pt": "brinquedos",
+          "item_rows": 4030,
+          "category_en": "toys",
+          "revenue": "471286.48",
+          "share_percent": 3.5645467410651848
+        },
+        {
+          "category_pt": "ferramentas_jardim",
+          "item_rows": 4268,
+          "category_en": "garden_tools",
+          "revenue": "470495.28",
+          "share_percent": 3.558562547795879
+        },
+        {
+          "category_pt": "bebes",
+          "item_rows": 2982,
+          "category_en": "baby",
+          "revenue": "400421.84",
+          "share_percent": 3.0285663293870106
+        },
+        {
+          "category_pt": "perfumaria",
+          "item_rows": 3340,
+          "category_en": "perfumery",
+          "revenue": "390144.65",
+          "share_percent": 2.950835425411561
+        },
+        {
+          "category_pt": "telefonia",
+          "item_rows": 4430,
+          "category_en": "telephony",
+          "revenue": "309860.23",
+          "share_percent": 2.343609078351258
+        },
+        {
+          "category_pt": "moveis_escritorio",
+          "item_rows": 1668,
+          "category_en": "office_furniture",
+          "revenue": "268154.31",
+          "share_percent": 2.0281688789652597
+        },
+        {
+          "category_pt": "papelaria",
+          "item_rows": 2466,
+          "category_en": "stationery",
+          "revenue": "223788.69",
+          "share_percent": 1.6926121997532093
+        },
+        {
+          "category_pt": "pcs",
+          "item_rows": 199,
+          "category_en": "computers",
+          "revenue": "218684.14",
+          "share_percent": 1.654004245060547
+        },
+        {
+          "category_pt": "pet_shop",
+          "item_rows": 1924,
+          "category_en": "pet_shop",
+          "revenue": "211695.64",
+          "share_percent": 1.6011471486720956
+        },
+        {
+          "category_pt": "instrumentos_musicais",
+          "item_rows": 651,
+          "category_en": "musical_instruments",
+          "revenue": "184315.74",
+          "share_percent": 1.3940609336894576
+        },
+        {
+          "category_pt": "eletroportateis",
+          "item_rows": 658,
+          "category_en": "small_appliances",
+          "revenue": "182754.12",
+          "share_percent": 1.3822497154219993
+        },
+        {
+          "category_pt": "__UNKNOWN__",
+          "item_rows": 1537,
+          "category_en": null,
+          "revenue": "170726.63",
+          "share_percent": 1.2912805234292772
+        },
+        {
+          "category_pt": "eletronicos",
+          "item_rows": 2729,
+          "category_en": "electronics",
+          "revenue": "155043.93",
+          "share_percent": 1.1726653720332454
+        },
+        {
+          "category_pt": "fashion_bolsas_e_acessorios",
+          "item_rows": 1985,
+          "category_en": "fashion_bags_accessories",
+          "revenue": "149329.39",
+          "share_percent": 1.1294437949286218
+        },
+        {
+          "category_pt": "consoles_games",
+          "item_rows": 1089,
+          "category_en": "consoles_games",
+          "revenue": "148003.37",
+          "share_percent": 1.1194145229885752
+        },
+        {
+          "category_pt": "construcao_ferramentas_construcao",
+          "item_rows": 916,
+          "category_en": "construction_tools_construction",
+          "revenue": "142108.49",
+          "share_percent": 1.074828955218903
+        },
+        {
+          "category_pt": "malas_acessorios",
+          "item_rows": 1077,
+          "category_en": "luggage_accessories",
+          "revenue": "138701.63",
+          "share_percent": 1.0490613759956133
+        },
+        {
+          "category_pt": "eletrodomesticos_2",
+          "item_rows": 231,
+          "category_en": "home_appliances_2",
+          "revenue": "107953.95",
+          "share_percent": 0.8165031610022293
+        },
+        {
+          "category_pt": "casa_construcao",
+          "item_rows": 596,
+          "category_en": "home_construction",
+          "revenue": "81407.57",
+          "share_percent": 0.6157212240451623
+        },
+        {
+          "category_pt": "eletrodomesticos",
+          "item_rows": 754,
+          "category_en": "home_appliances",
+          "revenue": "78832.48",
+          "share_percent": 0.5962446868284581
+        },
+        {
+          "category_pt": "agro_industria_e_comercio",
+          "item_rows": 206,
+          "category_en": "agro_industry_and_commerce",
+          "revenue": "70566.10",
+          "share_percent": 0.5337224224736511
+        },
+        {
+          "category_pt": "moveis_sala",
+          "item_rows": 495,
+          "category_en": "furniture_living_room",
+          "revenue": "67350.70",
+          "share_percent": 0.5094029393617634
+        },
+        {
+          "category_pt": "casa_conforto",
+          "item_rows": 429,
+          "category_en": "home_confort",
+          "revenue": "58008.45",
+          "share_percent": 0.4387433974378869
+        },
+        {
+          "category_pt": "telefonia_fixa",
+          "item_rows": 255,
+          "category_en": "fixed_telephony",
+          "revenue": "55315.21",
+          "share_percent": 0.41837323985367947
+        },
+        {
+          "category_pt": "climatizacao",
+          "item_rows": 289,
+          "category_en": "air_conditioning",
+          "revenue": "53323.56",
+          "share_percent": 0.40330951573232876
+        },
+        {
+          "category_pt": "audio",
+          "item_rows": 362,
+          "category_en": "audio",
+          "revenue": "50570.60",
+          "share_percent": 0.38248766954594376
+        },
+        {
+          "category_pt": "portateis_casa_forno_e_cafe",
+          "item_rows": 73,
+          "category_en": "small_appliances_home_oven_and_coffee",
+          "revenue": "46589.56",
+          "share_percent": 0.3523773146763321
+        },
+        {
+          "category_pt": "moveis_cozinha_area_de_servico_jantar_e_jardim",
+          "item_rows": 274,
+          "category_en": "kitchen_dining_laundry_garden_furniture",
+          "revenue": "45531.98",
+          "share_percent": 0.3443783724142589
+        },
+        {
+          "category_pt": "livros_interesse_geral",
+          "item_rows": 537,
+          "category_en": "books_general_interest",
+          "revenue": "45302.15",
+          "share_percent": 0.3426400671323017
+        },
+        {
+          "category_pt": "construcao_ferramentas_iluminacao",
+          "item_rows": 301,
+          "category_en": "construction_tools_lights",
+          "revenue": "39957.00",
+          "share_percent": 0.3022123489151261
+        },
+        {
+          "category_pt": "construcao_ferramentas_seguranca",
+          "item_rows": 183,
+          "category_en": "construction_tools_safety",
+          "revenue": "38773.22",
+          "share_percent": 0.2932589005982167
+        },
+        {
+          "category_pt": "industria_comercio_e_negocios",
+          "item_rows": 265,
+          "category_en": "industry_commerce_and_business",
+          "revenue": "38498.81",
+          "share_percent": 0.29118341718690455
+        },
+        {
+          "category_pt": "alimentos",
+          "item_rows": 499,
+          "category_en": "food",
+          "revenue": "28731.15",
+          "share_percent": 0.21730631249925733
+        },
+        {
+          "category_pt": "market_place",
+          "item_rows": 305,
+          "category_en": "market_place",
+          "revenue": "27795.77",
+          "share_percent": 0.21023162253433927
+        },
+        {
+          "category_pt": "construcao_ferramentas_jardim",
+          "item_rows": 232,
+          "category_en": "costruction_tools_garden",
+          "revenue": "25096.28",
+          "share_percent": 0.1898141934537553
+        },
+        {
+          "category_pt": "artes",
+          "item_rows": 197,
+          "category_en": "art",
+          "revenue": "23657.30",
+          "share_percent": 0.17893055539679686
+        },
+        {
+          "category_pt": "fashion_calcados",
+          "item_rows": 257,
+          "category_en": "fashion_shoes",
+          "revenue": "23001.46",
+          "share_percent": 0.17397014928741686
+        },
+        {
+          "category_pt": "bebidas",
+          "item_rows": 361,
+          "category_en": "drinks",
+          "revenue": "21529.84",
+          "share_percent": 0.16283964056778133
+        },
+        {
+          "category_pt": "sinalizacao_e_seguranca",
+          "item_rows": 197,
+          "category_en": "signaling_and_security",
+          "revenue": "21315.05",
+          "share_percent": 0.16121508941470475
+        },
+        {
+          "category_pt": "moveis_quarto",
+          "item_rows": 103,
+          "category_en": "furniture_bedroom",
+          "revenue": "19051.80",
+          "share_percent": 0.1440971351468128
+        },
+        {
+          "category_pt": "livros_tecnicos",
+          "item_rows": 263,
+          "category_en": "books_technical",
+          "revenue": "18702.23",
+          "share_percent": 0.1414531836286743
+        },
+        {
+          "category_pt": "construcao_ferramentas_ferramentas",
+          "item_rows": 103,
+          "category_en": "costruction_tools_tools",
+          "revenue": "15903.95",
+          "share_percent": 0.12028856236776334
+        },
+        {
+          "category_pt": "alimentos_bebidas",
+          "item_rows": 269,
+          "category_en": "food_drink",
+          "revenue": "14942.88",
+          "share_percent": 0.11301956764413892
+        },
+        {
+          "category_pt": "fashion_roupa_masculina",
+          "item_rows": 125,
+          "category_en": "fashion_male_clothing",
+          "revenue": "10452.33",
+          "share_percent": 0.07905556475551317
+        },
+        {
+          "category_pt": "fashion_underwear_e_moda_praia",
+          "item_rows": 127,
+          "category_en": "fashion_underwear_beach",
+          "revenue": "9305.95",
+          "share_percent": 0.07038498907292133
+        },
+        {
+          "category_pt": "artigos_de_natal",
+          "item_rows": 150,
+          "category_en": "christmas_supplies",
+          "revenue": "8737.84",
+          "share_percent": 0.0660881235038803
+        },
+        {
+          "category_pt": "tablets_impressao_imagem",
+          "item_rows": 83,
+          "category_en": "tablets_printing_image",
+          "revenue": "7528.41",
+          "share_percent": 0.05694067296584139
+        },
+        {
+          "category_pt": "cine_foto",
+          "item_rows": 70,
+          "category_en": "cine_photo",
+          "revenue": "6674.47",
+          "share_percent": 0.050481949507308894
+        },
+        {
+          "category_pt": "musica",
+          "item_rows": 38,
+          "category_en": "music",
+          "revenue": "6034.35",
+          "share_percent": 0.04564044066561531
+        },
+        {
+          "category_pt": "dvds_blu_ray",
+          "item_rows": 61,
+          "category_en": "dvds_blu_ray",
+          "revenue": "4542.59",
+          "share_percent": 0.034357604276055824
+        },
+        {
+          "category_pt": "artigos_de_festas",
+          "item_rows": 42,
+          "category_en": "party_supplies",
+          "revenue": "4465.19",
+          "share_percent": 0.033772194064928096
+        },
+        {
+          "category_pt": "livros_importados",
+          "item_rows": 57,
+          "category_en": "books_imported",
+          "revenue": "4418.86",
+          "share_percent": 0.03342177991658768
+        },
+        {
+          "category_pt": "moveis_colchao_e_estofado",
+          "item_rows": 37,
+          "category_en": "furniture_mattress_and_upholstery",
+          "revenue": "4323.38",
+          "share_percent": 0.03269962272074174
+        },
+        {
+          "category_pt": "portateis_cozinha_e_preparadores_de_alimentos",
+          "item_rows": 14,
+          "category_en": null,
+          "revenue": "3933.63",
+          "share_percent": 0.029751772206697384
+        },
+        {
+          "category_pt": "fashion_roupa_feminina",
+          "item_rows": 45,
+          "category_en": "fashio_female_clothing",
+          "revenue": "2634.94",
+          "share_percent": 0.019929209066006516
+        },
+        {
+          "category_pt": "fashion_esporte",
+          "item_rows": 29,
+          "category_en": "fashion_sport",
+          "revenue": "2094.52",
+          "share_percent": 0.015841775134512348
+        },
+        {
+          "category_pt": "la_cuisine",
+          "item_rows": 14,
+          "category_en": "la_cuisine",
+          "revenue": "2054.99",
+          "share_percent": 0.01554279237422967
+        },
+        {
+          "category_pt": "artes_e_artesanato",
+          "item_rows": 24,
+          "category_en": "arts_and_craftmanship",
+          "revenue": "1814.01",
+          "share_percent": 0.013720154742736638
+        },
+        {
+          "category_pt": "fraldas_higiene",
+          "item_rows": 37,
+          "category_en": "diapers_and_hygiene",
+          "revenue": "1500.79",
+          "share_percent": 0.01135113424752439
+        },
+        {
+          "category_pt": "pc_gamer",
+          "item_rows": 8,
+          "category_en": null,
+          "revenue": "1306.95",
+          "share_percent": 0.009885037150302176
+        },
+        {
+          "category_pt": "flores",
+          "item_rows": 33,
+          "category_en": "flowers",
+          "revenue": "1110.04",
+          "share_percent": 0.008395720294059779
+        },
+        {
+          "category_pt": "casa_conforto_2",
+          "item_rows": 30,
+          "category_en": "home_comfort_2",
+          "revenue": "760.27",
+          "share_percent": 0.0057502560880372125
+        },
+        {
+          "category_pt": "cds_dvds_musicais",
+          "item_rows": 14,
+          "category_en": "cds_dvds_musicals",
+          "revenue": "730.00",
+          "share_percent": 0.005521310776786096
+        },
+        {
+          "category_pt": "fashion_roupa_infanto_juvenil",
+          "item_rows": 7,
+          "category_en": "fashion_childrens_clothes",
+          "revenue": "519.95",
+          "share_percent": 0.003932610326561549
+        },
+        {
+          "category_pt": "seguros_e_servicos",
+          "item_rows": 2,
+          "category_en": "security_and_services",
+          "revenue": "283.29",
+          "share_percent": 0.002142646753364018
+        }
+      ]
+    }
+  },
+  "controls": {
+    "q1_revenue": true,
+    "q1_24_months": true,
+    "q2_top_seller": true,
+    "q3_159_88_any_variant": true,
+    "q4_buyers": true,
+    "q4_repeat_percent": true,
+    "q5_category_count": true,
+    "q5_top_revenue": true,
+    "q5_revenue": true
+  }
+}
