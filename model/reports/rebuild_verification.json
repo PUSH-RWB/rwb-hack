@@ -1,12 +1,11 @@
 {
-  "checked_at_utc": "2026-10-28T09:22:16.565260+00:00",
+  "checked_at_utc": "2026-10-28T14:12:22.071669+00:00",
   "same_database_rebuild": true,
   "fresh_database_rebuild": true,
   "core_tables_compared": 10,
   "raw_tables_compared": 8,
-  "answer_files_compared": 5,
+  "answer_files_compared": 11,
   "dq_results_identical": true,
   "raw_payload_excludes_only_loader_timestamp": true,
-  "baseline_core_fingerprint_sha256": "e16b645505d2a38e1044d1df2fe78ffc79c60772a2a8d82004237ab6ac96d23e",
-  "seconds": 89.79
+  "seconds": 100.15
 }

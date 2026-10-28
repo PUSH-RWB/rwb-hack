@@ -1,0 +1,698 @@
+{
+  "source_changed": false,
+  "summary": {
+    "PASS": 56,
+    "WARN": 0,
+    "FAIL": 0
+  },
+  "checks": [
+    {
+      "name": "q1_24_months",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 24,
+      "actual": 24
+    },
+    {
+      "name": "q1_empty_month",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": [
+        [
+          "2016-11",
+          "0",
+          "0.00"
+        ]
+      ],
+      "actual": [
+        [
+          "2016-11",
+          "0",
+          "0.00"
+        ]
+      ]
+    },
+    {
+      "name": "q1_total",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": "13221498.11",
+      "actual": "13221498.11"
+    },
+    {
+      "name": "q1_current_revenue",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": "13221498.11",
+      "actual": "13221498.11"
+    },
+    {
+      "name": "q2_ten_sellers",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": 10,
+      "actual": 10
+    },
+    {
+      "name": "q2_current_seller_count",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 10,
+      "actual": 10
+    },
+    {
+      "name": "q2_top_seller",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": {
+        "seller_id": "4869f7a5dfa277a7dca6462dcf3b52b2",
+        "city": "guariba",
+        "state": "SP",
+        "order_count": "1124",
+        "units": "1148",
+        "revenue": "226987.93"
+      },
+      "actual": {
+        "seller_id": "4869f7a5dfa277a7dca6462dcf3b52b2",
+        "city": "guariba",
+        "state": "SP",
+        "order_count": "1124",
+        "units": "1148",
+        "revenue": "226987.93"
+      }
+    },
+    {
+      "name": "q3_average",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": "159.88",
+      "actual": "159.88"
+    },
+    {
+      "name": "q3_lines_units",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": [
+        "1.1422",
+        "1.1422"
+      ],
+      "actual": [
+        "1.1422",
+        "1.1422"
+      ]
+    },
+    {
+      "name": "q3_orders",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": 96478,
+      "actual": 96478
+    },
+    {
+      "name": "q3_current_orders",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 96478,
+      "actual": 96478
+    },
+    {
+      "name": "q3_current_average",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": "159.88",
+      "actual": "159.88"
+    },
+    {
+      "name": "q4_buyers_repeat",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": {
+        "customers": "96096",
+        "repeat_customers": "2997",
+        "repeat_percentage": "3.12"
+      },
+      "actual": {
+        "customers": "96096",
+        "repeat_customers": "2997",
+        "repeat_percentage": "3.12"
+      }
+    },
+    {
+      "name": "q5_categories",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": 74,
+      "actual": 74
+    },
+    {
+      "name": "q5_top",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": [
+        "beleza_saude",
+        "1233131.72",
+        "9.33"
+      ],
+      "actual": [
+        "beleza_saude",
+        "1233131.72",
+        "9.33"
+      ]
+    },
+    {
+      "name": "q5_total",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": "13221498.11",
+      "actual": "13221498.11"
+    },
+    {
+      "name": "q5_current_revenue",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": "13221498.11",
+      "actual": "13221498.11"
+    },
+    {
+      "name": "q6_winner_prices",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": 31,
+      "actual": 31
+    },
+    {
+      "name": "q6_units",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": 151,
+      "actual": 151
+    },
+    {
+      "name": "q6_current_units",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 151,
+      "actual": 151
+    },
+    {
+      "name": "q6_current_prices",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 31,
+      "actual": 31
+    },
+    {
+      "name": "q6_unique_date_price",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 76,
+      "actual": 76
+    },
+    {
+      "name": "q7_states",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": 17,
+      "actual": 17
+    },
+    {
+      "name": "q7_sp",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": [
+        "40495",
+        "8.76",
+        "4.49"
+      ],
+      "actual": [
+        "40495",
+        "8.76",
+        "4.49"
+      ]
+    },
+    {
+      "name": "q7_minimum_orders",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "name": "q7_current_states",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": [
+        "BA",
+        "CE",
+        "DF",
+        "ES",
+        "GO",
+        "MA",
+        "MG",
+        "MS",
+        "MT",
+        "PA",
+        "PB",
+        "PE",
+        "PR",
+        "RJ",
+        "RS",
+        "SC",
+        "SP"
+      ],
+      "actual": [
+        "BA",
+        "CE",
+        "DF",
+        "ES",
+        "GO",
+        "MA",
+        "MG",
+        "MS",
+        "MT",
+        "PA",
+        "PB",
+        "PE",
+        "PR",
+        "RJ",
+        "RS",
+        "SC",
+        "SP"
+      ]
+    },
+    {
+      "name": "q7_current_orders",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 93944,
+      "actual": 93944
+    },
+    {
+      "name": "q8_orders",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": 99441,
+      "actual": 99441
+    },
+    {
+      "name": "q8_without_items",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": 775,
+      "actual": 775
+    },
+    {
+      "name": "q8_current_orders",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 99441,
+      "actual": 99441
+    },
+    {
+      "name": "q8_current_without_items",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 775,
+      "actual": 775
+    },
+    {
+      "name": "q8_current_statuses",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "name": "q9_states_2018",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": 56015,
+      "actual": 56015
+    },
+    {
+      "name": "q9_methods_all_period",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": 103886,
+      "actual": 103886
+    },
+    {
+      "name": "q9_current_states_count",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 56015,
+      "actual": 56015
+    },
+    {
+      "name": "q9_current_states_amount",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": "8699763.05",
+      "actual": "8699763.05"
+    },
+    {
+      "name": "q9_current_methods_count",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 103886,
+      "actual": 103886
+    },
+    {
+      "name": "q9_credit_card",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": [
+        "76795",
+        "3.51"
+      ],
+      "actual": [
+        "76795",
+        "3.51"
+      ]
+    },
+    {
+      "name": "q10_scores",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "actual": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "name": "q10_current_memberships",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 96019,
+      "actual": 96019
+    },
+    {
+      "name": "q10_baseline_counts",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": [
+        9384,
+        2938,
+        7943,
+        18943,
+        56811
+      ],
+      "actual": [
+        9384,
+        2938,
+        7943,
+        18943,
+        56811
+      ]
+    },
+    {
+      "name": "q4_current_customers",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 96096,
+      "actual": 96096
+    },
+    {
+      "name": "q4_current_repeat",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 2997,
+      "actual": 2997
+    },
+    {
+      "name": "q5_current_categories",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": [
+        "__unknown__",
+        "agro_industria_e_comercio",
+        "alimentos",
+        "alimentos_bebidas",
+        "artes",
+        "artes_e_artesanato",
+        "artigos_de_festas",
+        "artigos_de_natal",
+        "audio",
+        "automotivo",
+        "bebes",
+        "bebidas",
+        "beleza_saude",
+        "brinquedos",
+        "cama_mesa_banho",
+        "casa_conforto",
+        "casa_conforto_2",
+        "casa_construcao",
+        "cds_dvds_musicais",
+        "cine_foto",
+        "climatizacao",
+        "consoles_games",
+        "construcao_ferramentas_construcao",
+        "construcao_ferramentas_ferramentas",
+        "construcao_ferramentas_iluminacao",
+        "construcao_ferramentas_jardim",
+        "construcao_ferramentas_seguranca",
+        "cool_stuff",
+        "dvds_blu_ray",
+        "eletrodomesticos",
+        "eletrodomesticos_2",
+        "eletronicos",
+        "eletroportateis",
+        "esporte_lazer",
+        "fashion_bolsas_e_acessorios",
+        "fashion_calcados",
+        "fashion_esporte",
+        "fashion_roupa_feminina",
+        "fashion_roupa_infanto_juvenil",
+        "fashion_roupa_masculina",
+        "fashion_underwear_e_moda_praia",
+        "ferramentas_jardim",
+        "flores",
+        "fraldas_higiene",
+        "industria_comercio_e_negocios",
+        "informatica_acessorios",
+        "instrumentos_musicais",
+        "la_cuisine",
+        "livros_importados",
+        "livros_interesse_geral",
+        "livros_tecnicos",
+        "malas_acessorios",
+        "market_place",
+        "moveis_colchao_e_estofado",
+        "moveis_cozinha_area_de_servico_jantar_e_jardim",
+        "moveis_decoracao",
+        "moveis_escritorio",
+        "moveis_quarto",
+        "moveis_sala",
+        "musica",
+        "papelaria",
+        "pc_gamer",
+        "pcs",
+        "perfumaria",
+        "pet_shop",
+        "portateis_casa_forno_e_cafe",
+        "portateis_cozinha_e_preparadores_de_alimentos",
+        "relogios_presentes",
+        "seguros_e_servicos",
+        "sinalizacao_e_seguranca",
+        "tablets_impressao_imagem",
+        "telefonia",
+        "telefonia_fixa",
+        "utilidades_domesticas"
+      ],
+      "actual": [
+        "__unknown__",
+        "agro_industria_e_comercio",
+        "alimentos",
+        "alimentos_bebidas",
+        "artes",
+        "artes_e_artesanato",
+        "artigos_de_festas",
+        "artigos_de_natal",
+        "audio",
+        "automotivo",
+        "bebes",
+        "bebidas",
+        "beleza_saude",
+        "brinquedos",
+        "cama_mesa_banho",
+        "casa_conforto",
+        "casa_conforto_2",
+        "casa_construcao",
+        "cds_dvds_musicais",
+        "cine_foto",
+        "climatizacao",
+        "consoles_games",
+        "construcao_ferramentas_construcao",
+        "construcao_ferramentas_ferramentas",
+        "construcao_ferramentas_iluminacao",
+        "construcao_ferramentas_jardim",
+        "construcao_ferramentas_seguranca",
+        "cool_stuff",
+        "dvds_blu_ray",
+        "eletrodomesticos",
+        "eletrodomesticos_2",
+        "eletronicos",
+        "eletroportateis",
+        "esporte_lazer",
+        "fashion_bolsas_e_acessorios",
+        "fashion_calcados",
+        "fashion_esporte",
+        "fashion_roupa_feminina",
+        "fashion_roupa_infanto_juvenil",
+        "fashion_roupa_masculina",
+        "fashion_underwear_e_moda_praia",
+        "ferramentas_jardim",
+        "flores",
+        "fraldas_higiene",
+        "industria_comercio_e_negocios",
+        "informatica_acessorios",
+        "instrumentos_musicais",
+        "la_cuisine",
+        "livros_importados",
+        "livros_interesse_geral",
+        "livros_tecnicos",
+        "malas_acessorios",
+        "market_place",
+        "moveis_colchao_e_estofado",
+        "moveis_cozinha_area_de_servico_jantar_e_jardim",
+        "moveis_decoracao",
+        "moveis_escritorio",
+        "moveis_quarto",
+        "moveis_sala",
+        "musica",
+        "papelaria",
+        "pc_gamer",
+        "pcs",
+        "perfumaria",
+        "pet_shop",
+        "portateis_casa_forno_e_cafe",
+        "portateis_cozinha_e_preparadores_de_alimentos",
+        "relogios_presentes",
+        "seguros_e_servicos",
+        "sinalizacao_e_seguranca",
+        "tablets_impressao_imagem",
+        "telefonia",
+        "telefonia_fixa",
+        "utilidades_domesticas"
+      ]
+    },
+    {
+      "name": "q10_baseline_days",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": [
+        "21.31",
+        "16.65",
+        "14.26",
+        "12.31",
+        "10.68"
+      ],
+      "actual": [
+        "21.31",
+        "16.65",
+        "14.26",
+        "12.31",
+        "10.68"
+      ]
+    },
+    {
+      "name": "q10_baseline_late",
+      "kind": "SNAPSHOT",
+      "status": "PASS",
+      "expected": [
+        "36.58",
+        "18.86",
+        "8.79",
+        "3.44",
+        "1.86"
+      ],
+      "actual": [
+        "36.58",
+        "18.86",
+        "8.79",
+        "3.44",
+        "1.86"
+      ]
+    },
+    {
+      "name": "q2_unique_groups",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 10,
+      "actual": 10
+    },
+    {
+      "name": "q5_unique_groups",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 74,
+      "actual": 74
+    },
+    {
+      "name": "q7_unique_groups",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 17,
+      "actual": 17
+    },
+    {
+      "name": "q8_unique_groups",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 8,
+      "actual": 8
+    },
+    {
+      "name": "q9states_unique_groups",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 27,
+      "actual": 27
+    },
+    {
+      "name": "q9methods_unique_groups",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": 5,
+      "actual": 5
+    },
+    {
+      "name": "q7_valid_percentages",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "name": "q8_valid_percentages",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "name": "q10_valid_percentages",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": true,
+      "actual": true
+    },
+    {
+      "name": "q8_current_percentages",
+      "kind": "MODEL",
+      "status": "PASS",
+      "expected": true,
+      "actual": true
+    }
+  ]
+}

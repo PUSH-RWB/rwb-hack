@@ -19,6 +19,7 @@ dim_order_status,is_revenue,boolean,NO
 dim_order_status,is_terminal,boolean,NO
 dim_order_status,is_canceled,boolean,NO
 dim_order_status,is_shipped_out,boolean,NO
+dim_product,product_key,bigint,NO
 dim_product,product_id,text,NO
 dim_product,category_name_pt,text,NO
 dim_product,category_name_en,text,YES
@@ -32,6 +33,9 @@ dim_product,product_length_cm,integer,YES
 dim_product,product_height_cm,integer,YES
 dim_product,product_width_cm,integer,YES
 dim_product,product_volume_cm3,bigint,YES
+dim_product,valid_from,timestamp without time zone,NO
+dim_product,valid_to,timestamp without time zone,YES
+dim_product,is_current,boolean,NO
 dim_seller,seller_id,text,NO
 dim_seller,zip_code_prefix,text,YES
 dim_seller,city,text,YES
@@ -39,6 +43,7 @@ dim_seller,state,text,YES
 fct_order_items,order_id,text,NO
 fct_order_items,order_item_id,integer,NO
 fct_order_items,product_id,text,NO
+fct_order_items,product_key,bigint,NO
 fct_order_items,seller_id,text,NO
 fct_order_items,shipping_limit_at,timestamp without time zone,YES
 fct_order_items,price,numeric,NO

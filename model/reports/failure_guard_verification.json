@@ -1,4 +1,5 @@
 {
+  "all_history_hashes_unchanged": true,
   "injected_defect_detected": true,
   "failed_check": "item_denormalization",
   "failed_check_violations": 1,

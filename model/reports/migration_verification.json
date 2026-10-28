@@ -1,0 +1,16 @@
+{
+  "all_11_answer_files_byte_identical": true,
+  "original_business_projections_identical": [
+    "dim_customer",
+    "dim_date",
+    "dim_geography",
+    "dim_order_status",
+    "dim_product",
+    "dim_seller",
+    "fct_order_items",
+    "fct_orders",
+    "fct_payments",
+    "fct_reviews"
+  ],
+  "calendar_extended_only": true
+}

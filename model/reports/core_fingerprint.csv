@@ -1,11 +1,11 @@
 table_name,row_count,payload_hash
 core.dim_customer,96096,b840269fc333294f84bf59d89acf81ea
-core.dim_date,1096,cbc60b62274fc5f3c52a69b6d02b6053
+core.dim_date,1826,50a70a3e7308fa7f7073c2f36e928568
 core.dim_geography,15080,c1243294e87499a9d2fb07818c4090ee
 core.dim_order_status,8,9254c59b401bf73b601f6634f312f849
-core.dim_product,32951,4b3ebfeade569027da22ca69e17fe41d
+core.dim_product,32951,e728f8a6f7e3282374e182c87de006a8
 core.dim_seller,3095,989b8e8bbf6b7b4eb74366a51397c415
-core.fct_order_items,112650,359e3b0b48e7f5a1103311cfad634357
+core.fct_order_items,112650,079b5888b38e5ebb7be8d303e0b7321e
 core.fct_orders,99441,bf04f25b8074f0ba94a48aad383b6eb9
 core.fct_payments,103886,2c4a259e95e8bf3e31013fc4beae4149
 core.fct_reviews,99224,4fc514665b4ee79c35a67f5b7b6f3deb

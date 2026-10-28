@@ -10,6 +10,7 @@ CREATE INDEX orders_customer_idx ON core.fct_orders(customer_unique_id);
 CREATE INDEX orders_status_idx ON core.fct_orders(order_status);
 CREATE INDEX orders_geography_idx ON core.fct_orders(customer_zip_code_prefix);
 CREATE INDEX items_seller_date_idx ON core.fct_order_items(seller_id,purchase_date);
+CREATE INDEX items_product_version_idx ON core.fct_order_items(product_key);
 CREATE INDEX items_product_idx ON core.fct_order_items(product_id);
 CREATE INDEX items_customer_idx ON core.fct_order_items(customer_unique_id);
 CREATE INDEX items_date_idx ON core.fct_order_items(purchase_date);

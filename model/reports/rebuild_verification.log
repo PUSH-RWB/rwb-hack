@@ -1,15 +1,17 @@
-$ bash model/build.sh
+BUILD /var/folders/xs/btjbnkpd2dbg_7z4qvhzjtr40000gn/T/capibara-rebuild-9tlprjib/repeat
+Source data match the original baseline.
 check_name,status,violations,defect_type,expected,explanation
 chronology_flags,WARN,1382,SOURCE,WARN,"Нарушения хронологии помечены, исходные даты сохранены"
 delivered_payment_gap,WARN,633,SOURCE,goods+freight minus payments = 2001.88,Разница общих сумм включает заказ без платежа; сумма известных индивидуальных разниц отличается
 delivered_without_date,WARN,8,SOURCE,8,Ожидаемая аномалия источника; заказ сохранён
 geography_ambiguity,WARN,33,SOURCE,33,Префикс не гарантирует единственный штат; исходные адреса сохранены
+non_revenue_with_delivery_date,WARN,6,SOURCE,WARN,Для Q7/Q10 используем фактическую дату вручения; противоречивый статус виден отдельно
 orders_without_items,WARN,775,SOURCE,775,Заказы без товарных позиций сохранены
 orders_without_payments,WARN,1,SOURCE,1,Отсутствующий платёж не равен нулевому
 orders_without_reviews,WARN,768,SOURCE,768,Отзыв необязателен
 zero_installments,WARN,2,SOURCE,2,Нулевые installments сохраняются; payment_value не умножается
-categories,PASS,0,MODEL,74; unknown products=610,Пустая категория сохранена отдельно
-category_translation,PASS,0,MODEL,13,"Две категории без перевода, 13 товаров сохранены"
+categories,PASS,0,SNAPSHOT,74; unknown products=610,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+category_translation,PASS,0,SNAPSHOT,13,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 delivery_before_purchase,PASS,0,SOURCE,0,Даты не переставляются автоматически
 fk_dim_seller_zip_code_prefix,PASS,0,MODEL,0,Ссылочная целостность
 fk_fct_order_items_customer_unique_id,PASS,0,MODEL,0,Ссылочная целостность
@@ -25,29 +27,32 @@ fk_fct_orders_purchase_date,PASS,0,MODEL,0,Ссылочная целостнос
 fk_fct_payments_order_id,PASS,0,MODEL,0,Ссылочная целостность
 fk_fct_reviews_order_id,PASS,0,MODEL,0,Ссылочная целостность
 item_denormalization,PASS,0,MODEL,0,Денормализованные поля согласованы с заказом и статусом
+item_product_asof,PASS,0,MODEL,0,"Позиция ссылается на версию, действовавшую при оформлении"
 mart_order_grain,PASS,0,MODEL,0,Витрина не размножает и не теряет заказы
 missing_money_is_null,PASS,0,MODEL,0,Неизвестные суммы не заменены нулём
 order_value_identity,PASS,0,MODEL,0,"Чек = товары + доставка, включая семантику NULL"
-payment_gap_control,PASS,0,MODEL,2001.88,Сохранение известного расхождения источников; не исправлять
+payment_gap_control,PASS,0,SNAPSHOT,2001.88,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 payment_sums,PASS,0,MODEL,0,Сохранность платежей и их свёрток
+product_history_conservation,PASS,0,MODEL,0,Пересборка не теряет сохранённые версии
+product_version_intervals,PASS,0,MODEL,0,"Версии без пересечений и разрывов, последняя открыта"
 raw_conservation_fct_order_items,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_conservation_fct_orders,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_conservation_fct_payments,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_conservation_fct_reviews,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_sum_freight_value,PASS,0,MODEL,0,Сумма сохранена относительно raw
 raw_sum_price,PASS,0,MODEL,0,Сумма сохранена относительно raw
-revenue,PASS,0,MODEL,13221498.11,Стоимость доставленных товаров без доставки
+revenue,PASS,0,SNAPSHOT,13221498.11,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 review_counts,PASS,0,MODEL,0,Сохранность отзывов в свёртке
-rows_dim_customer,PASS,0,MODEL,96096,Число строк фиксированного снимка
-rows_dim_date,PASS,0,MODEL,1096,Число строк фиксированного снимка
-rows_dim_geography,PASS,0,MODEL,15080,Число строк фиксированного снимка
-rows_dim_order_status,PASS,0,MODEL,8,Число строк фиксированного снимка
-rows_dim_product,PASS,0,MODEL,32951,Число строк фиксированного снимка
-rows_dim_seller,PASS,0,MODEL,3095,Число строк фиксированного снимка
-rows_fct_order_items,PASS,0,MODEL,112650,Число строк фиксированного снимка
-rows_fct_orders,PASS,0,MODEL,99441,Число строк фиксированного снимка
-rows_fct_payments,PASS,0,MODEL,103886,Число строк фиксированного снимка
-rows_fct_reviews,PASS,0,MODEL,99224,Число строк фиксированного снимка
+rows_dim_customer,PASS,0,SNAPSHOT,96096,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_date,PASS,0,SNAPSHOT,1826,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_geography,PASS,0,SNAPSHOT,15080,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_order_status,PASS,0,SNAPSHOT,8,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_product,PASS,0,SNAPSHOT,32951,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_seller,PASS,0,SNAPSHOT,3095,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_order_items,PASS,0,SNAPSHOT,112650,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_orders,PASS,0,SNAPSHOT,99441,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_payments,PASS,0,SNAPSHOT,103886,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_reviews,PASS,0,SNAPSHOT,99224,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 sum_freight_amount,PASS,0,MODEL,0,Денежная свёртка совпадает с деталью
 sum_item_amount,PASS,0,MODEL,0,Денежная свёртка совпадает с деталью
 unique_dim_customer,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
@@ -60,8 +65,70 @@ unique_fct_order_items,PASS,0,MODEL,0,Уникальность объявлен�
 unique_fct_orders,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
 unique_fct_payments,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
 unique_fct_reviews,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
-All 12 acceptance checks for five core-only answers passed.
-Build complete; raw unchanged; answers verified. Results: /var/folders/xs/btjbnkpd2dbg_7z4qvhzjtr40000gn/T/capibara-rebuild-4b6jq9hr/repeat/answers
+unknown_order_status,PASS,0,SNAPSHOT,0,Новые статусы не включены в выручку; требуется классификация человеком
+PASS q1_24_months: expected=24; actual=24
+PASS q1_empty_month: expected=[('2016-11', '0', '0.00')]; actual=[('2016-11', '0', '0.00')]
+PASS q1_total: expected=13221498.11; actual=13221498.11
+PASS q1_current_revenue: expected=13221498.11; actual=13221498.11
+PASS q2_ten_sellers: expected=10; actual=10
+PASS q2_current_seller_count: expected=10; actual=10
+PASS q2_top_seller: expected={'seller_id': '4869f7a5dfa277a7dca6462dcf3b52b2', 'city': 'guariba', 'state': 'SP', 'order_count': '1124', 'units': '1148', 'revenue': '226987.93'}; actual={'seller_id': '4869f7a5dfa277a7dca6462dcf3b52b2', 'city': 'guariba', 'state': 'SP', 'order_count': '1124', 'units': '1148', 'revenue': '226987.93'}
+PASS q3_average: expected=159.88; actual=159.88
+PASS q3_lines_units: expected=[Decimal('1.1422'), Decimal('1.1422')]; actual=[Decimal('1.1422'), Decimal('1.1422')]
+PASS q3_orders: expected=96478; actual=96478
+PASS q3_current_orders: expected=96478; actual=96478
+PASS q3_current_average: expected=159.88; actual=159.88
+PASS q4_buyers_repeat: expected={'customers': '96096', 'repeat_customers': '2997', 'repeat_percentage': '3.12'}; actual={'customers': '96096', 'repeat_customers': '2997', 'repeat_percentage': '3.12'}
+PASS q5_categories: expected=74; actual=74
+PASS q5_top: expected=['beleza_saude', Decimal('1233131.72'), Decimal('9.33')]; actual=['beleza_saude', Decimal('1233131.72'), Decimal('9.33')]
+PASS q5_total: expected=13221498.11; actual=13221498.11
+PASS q5_current_revenue: expected=13221498.11; actual=13221498.11
+PASS q6_winner_prices: expected=31; actual=31
+PASS q6_units: expected=151; actual=151
+PASS q6_current_units: expected=151; actual=151
+PASS q6_current_prices: expected=31; actual=31
+PASS q6_unique_date_price: expected=76; actual=76
+PASS q7_states: expected=17; actual=17
+PASS q7_sp: expected=['40495', '8.76', '4.49']; actual=['40495', '8.76', '4.49']
+PASS q7_minimum_orders: expected=True; actual=True
+PASS q7_current_states: expected=['BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PR', 'RJ', 'RS', 'SC', 'SP']; actual=['BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PR', 'RJ', 'RS', 'SC', 'SP']
+PASS q7_current_orders: expected=93944; actual=93944
+PASS q8_orders: expected=99441; actual=99441
+PASS q8_without_items: expected=775; actual=775
+PASS q8_current_orders: expected=99441; actual=99441
+PASS q8_current_without_items: expected=775; actual=775
+PASS q8_current_statuses: expected=8; actual=8
+PASS q9_states_2018: expected=56015; actual=56015
+PASS q9_methods_all_period: expected=103886; actual=103886
+PASS q9_current_states_count: expected=56015; actual=56015
+PASS q9_current_states_amount: expected=8699763.05; actual=8699763.05
+PASS q9_current_methods_count: expected=103886; actual=103886
+PASS q9_credit_card: expected=['76795', '3.51']; actual=['76795', '3.51']
+PASS q10_scores: expected=[1, 2, 3, 4, 5]; actual=[1, 2, 3, 4, 5]
+PASS q10_current_memberships: expected=96019; actual=96019
+PASS q10_baseline_counts: expected=[9384, 2938, 7943, 18943, 56811]; actual=[9384, 2938, 7943, 18943, 56811]
+PASS q4_current_customers: expected=96096; actual=96096
+PASS q4_current_repeat: expected=2997; actual=2997
+PASS q5_current_categories: expected=['__unknown__', 'agro_industria_e_comercio', 'alimentos', 'alimentos_bebidas', 'artes', 'artes_e_artesanato', 'artigos_de_festas', 'artigos_de_natal', 'audio', 'automotivo', 'bebes', 'bebidas', 'beleza_saude', 'brinquedos', 'cama_mesa_banho', 'casa_conforto', 'casa_conforto_2', 'casa_construcao', 'cds_dvds_musicais', 'cine_foto', 'climatizacao', 'consoles_games', 'construcao_ferramentas_construcao', 'construcao_ferramentas_ferramentas', 'construcao_ferramentas_iluminacao', 'construcao_ferramentas_jardim', 'construcao_ferramentas_seguranca', 'cool_stuff', 'dvds_blu_ray', 'eletrodomesticos', 'eletrodomesticos_2', 'eletronicos', 'eletroportateis', 'esporte_lazer', 'fashion_bolsas_e_acessorios', 'fashion_calcados', 'fashion_esporte', 'fashion_roupa_feminina', 'fashion_roupa_infanto_juvenil', 'fashion_roupa_masculina', 'fashion_underwear_e_moda_praia', 'ferramentas_jardim', 'flores', 'fraldas_higiene', 'industria_comercio_e_negocios', 'informatica_acessorios', 'instrumentos_musicais', 'la_cuisine', 'livros_importados', 'livros_interesse_geral', 'livros_tecnicos', 'malas_acessorios', 'market_place', 'moveis_colchao_e_estofado', 'moveis_cozinha_area_de_servico_jantar_e_jardim', 'moveis_decoracao', 'moveis_escritorio', 'moveis_quarto', 'moveis_sala', 'musica', 'papelaria', 'pc_gamer', 'pcs', 'perfumaria', 'pet_shop', 'portateis_casa_forno_e_cafe', 'portateis_cozinha_e_preparadores_de_alimentos', 'relogios_presentes', 'seguros_e_servicos', 'sinalizacao_e_seguranca', 'tablets_impressao_imagem', 'telefonia', 'telefonia_fixa', 'utilidades_domesticas']; actual=['__unknown__', 'agro_industria_e_comercio', 'alimentos', 'alimentos_bebidas', 'artes', 'artes_e_artesanato', 'artigos_de_festas', 'artigos_de_natal', 'audio', 'automotivo', 'bebes', 'bebidas', 'beleza_saude', 'brinquedos', 'cama_mesa_banho', 'casa_conforto', 'casa_conforto_2', 'casa_construcao', 'cds_dvds_musicais', 'cine_foto', 'climatizacao', 'consoles_games', 'construcao_ferramentas_construcao', 'construcao_ferramentas_ferramentas', 'construcao_ferramentas_iluminacao', 'construcao_ferramentas_jardim', 'construcao_ferramentas_seguranca', 'cool_stuff', 'dvds_blu_ray', 'eletrodomesticos', 'eletrodomesticos_2', 'eletronicos', 'eletroportateis', 'esporte_lazer', 'fashion_bolsas_e_acessorios', 'fashion_calcados', 'fashion_esporte', 'fashion_roupa_feminina', 'fashion_roupa_infanto_juvenil', 'fashion_roupa_masculina', 'fashion_underwear_e_moda_praia', 'ferramentas_jardim', 'flores', 'fraldas_higiene', 'industria_comercio_e_negocios', 'informatica_acessorios', 'instrumentos_musicais', 'la_cuisine', 'livros_importados', 'livros_interesse_geral', 'livros_tecnicos', 'malas_acessorios', 'market_place', 'moveis_colchao_e_estofado', 'moveis_cozinha_area_de_servico_jantar_e_jardim', 'moveis_decoracao', 'moveis_escritorio', 'moveis_quarto', 'moveis_sala', 'musica', 'papelaria', 'pc_gamer', 'pcs', 'perfumaria', 'pet_shop', 'portateis_casa_forno_e_cafe', 'portateis_cozinha_e_preparadores_de_alimentos', 'relogios_presentes', 'seguros_e_servicos', 'sinalizacao_e_seguranca', 'tablets_impressao_imagem', 'telefonia', 'telefonia_fixa', 'utilidades_domesticas']
+PASS q10_baseline_days: expected=['21.31', '16.65', '14.26', '12.31', '10.68']; actual=['21.31', '16.65', '14.26', '12.31', '10.68']
+PASS q10_baseline_late: expected=['36.58', '18.86', '8.79', '3.44', '1.86']; actual=['36.58', '18.86', '8.79', '3.44', '1.86']
+PASS q2_unique_groups: expected=10; actual=10
+PASS q5_unique_groups: expected=74; actual=74
+PASS q7_unique_groups: expected=17; actual=17
+PASS q8_unique_groups: expected=8; actual=8
+PASS q9states_unique_groups: expected=27; actual=27
+PASS q9methods_unique_groups: expected=5; actual=5
+PASS q7_valid_percentages: expected=True; actual=True
+PASS q8_valid_percentages: expected=True; actual=True
+PASS q10_valid_percentages: expected=True; actual=True
+PASS q8_current_percentages: expected=True; actual=True
+Answer checks: {'PASS': 56, 'WARN': 0, 'FAIL': 0}
+
+BUILD SUMMARY
+Model: {'PASS': 56, 'WARN': 9, 'FAIL': 0} Answers: {'PASS': 56, 'WARN': 0, 'FAIL': 0}
+Original-source controls differing: 0
+Source changed: False []
+Build complete; raw unchanged; verified exports: /var/folders/xs/btjbnkpd2dbg_7z4qvhzjtr40000gn/T/capibara-rebuild-9tlprjib/repeat/answers
 Building 00_schema.sql
 Building 10_dim_date.sql
 Building 11_dim_order_status.sql
@@ -77,9 +144,8 @@ Building 24_order_rollups.sql
 Building 30_mart_order_metrics.sql
 Building 40_indexes.sql
 
-$ docker exec hack_postgres createdb -U hack rwb_verify_42145_1793179246
+SQL: CREATE DATABASE "rwb_probe_8b4e40fa6a754684";
 
-$ python3 model/load_raw_copy.py
 {
   "raw_counts": {
     "raw.product_category_translation": "71",
@@ -94,18 +160,20 @@ $ python3 model/load_raw_copy.py
   "total_rows": 550759
 }
 
-$ bash model/build.sh
+BUILD /var/folders/xs/btjbnkpd2dbg_7z4qvhzjtr40000gn/T/capibara-rebuild-9tlprjib/fresh
+Source data match the original baseline.
 check_name,status,violations,defect_type,expected,explanation
 chronology_flags,WARN,1382,SOURCE,WARN,"Нарушения хронологии помечены, исходные даты сохранены"
 delivered_payment_gap,WARN,633,SOURCE,goods+freight minus payments = 2001.88,Разница общих сумм включает заказ без платежа; сумма известных индивидуальных разниц отличается
 delivered_without_date,WARN,8,SOURCE,8,Ожидаемая аномалия источника; заказ сохранён
 geography_ambiguity,WARN,33,SOURCE,33,Префикс не гарантирует единственный штат; исходные адреса сохранены
+non_revenue_with_delivery_date,WARN,6,SOURCE,WARN,Для Q7/Q10 используем фактическую дату вручения; противоречивый статус виден отдельно
 orders_without_items,WARN,775,SOURCE,775,Заказы без товарных позиций сохранены
 orders_without_payments,WARN,1,SOURCE,1,Отсутствующий платёж не равен нулевому
 orders_without_reviews,WARN,768,SOURCE,768,Отзыв необязателен
 zero_installments,WARN,2,SOURCE,2,Нулевые installments сохраняются; payment_value не умножается
-categories,PASS,0,MODEL,74; unknown products=610,Пустая категория сохранена отдельно
-category_translation,PASS,0,MODEL,13,"Две категории без перевода, 13 товаров сохранены"
+categories,PASS,0,SNAPSHOT,74; unknown products=610,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+category_translation,PASS,0,SNAPSHOT,13,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 delivery_before_purchase,PASS,0,SOURCE,0,Даты не переставляются автоматически
 fk_dim_seller_zip_code_prefix,PASS,0,MODEL,0,Ссылочная целостность
 fk_fct_order_items_customer_unique_id,PASS,0,MODEL,0,Ссылочная целостность
@@ -121,29 +189,32 @@ fk_fct_orders_purchase_date,PASS,0,MODEL,0,Ссылочная целостнос
 fk_fct_payments_order_id,PASS,0,MODEL,0,Ссылочная целостность
 fk_fct_reviews_order_id,PASS,0,MODEL,0,Ссылочная целостность
 item_denormalization,PASS,0,MODEL,0,Денормализованные поля согласованы с заказом и статусом
+item_product_asof,PASS,0,MODEL,0,"Позиция ссылается на версию, действовавшую при оформлении"
 mart_order_grain,PASS,0,MODEL,0,Витрина не размножает и не теряет заказы
 missing_money_is_null,PASS,0,MODEL,0,Неизвестные суммы не заменены нулём
 order_value_identity,PASS,0,MODEL,0,"Чек = товары + доставка, включая семантику NULL"
-payment_gap_control,PASS,0,MODEL,2001.88,Сохранение известного расхождения источников; не исправлять
+payment_gap_control,PASS,0,SNAPSHOT,2001.88,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 payment_sums,PASS,0,MODEL,0,Сохранность платежей и их свёрток
+product_history_conservation,PASS,0,MODEL,0,Пересборка не теряет сохранённые версии
+product_version_intervals,PASS,0,MODEL,0,"Версии без пересечений и разрывов, последняя открыта"
 raw_conservation_fct_order_items,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_conservation_fct_orders,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_conservation_fct_payments,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_conservation_fct_reviews,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_sum_freight_value,PASS,0,MODEL,0,Сумма сохранена относительно raw
 raw_sum_price,PASS,0,MODEL,0,Сумма сохранена относительно raw
-revenue,PASS,0,MODEL,13221498.11,Стоимость доставленных товаров без доставки
+revenue,PASS,0,SNAPSHOT,13221498.11,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 review_counts,PASS,0,MODEL,0,Сохранность отзывов в свёртке
-rows_dim_customer,PASS,0,MODEL,96096,Число строк фиксированного снимка
-rows_dim_date,PASS,0,MODEL,1096,Число строк фиксированного снимка
-rows_dim_geography,PASS,0,MODEL,15080,Число строк фиксированного снимка
-rows_dim_order_status,PASS,0,MODEL,8,Число строк фиксированного снимка
-rows_dim_product,PASS,0,MODEL,32951,Число строк фиксированного снимка
-rows_dim_seller,PASS,0,MODEL,3095,Число строк фиксированного снимка
-rows_fct_order_items,PASS,0,MODEL,112650,Число строк фиксированного снимка
-rows_fct_orders,PASS,0,MODEL,99441,Число строк фиксированного снимка
-rows_fct_payments,PASS,0,MODEL,103886,Число строк фиксированного снимка
-rows_fct_reviews,PASS,0,MODEL,99224,Число строк фиксированного снимка
+rows_dim_customer,PASS,0,SNAPSHOT,96096,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_date,PASS,0,SNAPSHOT,1826,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_geography,PASS,0,SNAPSHOT,15080,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_order_status,PASS,0,SNAPSHOT,8,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_product,PASS,0,SNAPSHOT,32951,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_seller,PASS,0,SNAPSHOT,3095,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_order_items,PASS,0,SNAPSHOT,112650,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_orders,PASS,0,SNAPSHOT,99441,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_payments,PASS,0,SNAPSHOT,103886,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_reviews,PASS,0,SNAPSHOT,99224,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 sum_freight_amount,PASS,0,MODEL,0,Денежная свёртка совпадает с деталью
 sum_item_amount,PASS,0,MODEL,0,Денежная свёртка совпадает с деталью
 unique_dim_customer,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
@@ -156,8 +227,70 @@ unique_fct_order_items,PASS,0,MODEL,0,Уникальность объявлен�
 unique_fct_orders,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
 unique_fct_payments,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
 unique_fct_reviews,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
-All 12 acceptance checks for five core-only answers passed.
-Build complete; raw unchanged; answers verified. Results: /var/folders/xs/btjbnkpd2dbg_7z4qvhzjtr40000gn/T/capibara-rebuild-4b6jq9hr/fresh/answers
+unknown_order_status,PASS,0,SNAPSHOT,0,Новые статусы не включены в выручку; требуется классификация человеком
+PASS q1_24_months: expected=24; actual=24
+PASS q1_empty_month: expected=[('2016-11', '0', '0.00')]; actual=[('2016-11', '0', '0.00')]
+PASS q1_total: expected=13221498.11; actual=13221498.11
+PASS q1_current_revenue: expected=13221498.11; actual=13221498.11
+PASS q2_ten_sellers: expected=10; actual=10
+PASS q2_current_seller_count: expected=10; actual=10
+PASS q2_top_seller: expected={'seller_id': '4869f7a5dfa277a7dca6462dcf3b52b2', 'city': 'guariba', 'state': 'SP', 'order_count': '1124', 'units': '1148', 'revenue': '226987.93'}; actual={'seller_id': '4869f7a5dfa277a7dca6462dcf3b52b2', 'city': 'guariba', 'state': 'SP', 'order_count': '1124', 'units': '1148', 'revenue': '226987.93'}
+PASS q3_average: expected=159.88; actual=159.88
+PASS q3_lines_units: expected=[Decimal('1.1422'), Decimal('1.1422')]; actual=[Decimal('1.1422'), Decimal('1.1422')]
+PASS q3_orders: expected=96478; actual=96478
+PASS q3_current_orders: expected=96478; actual=96478
+PASS q3_current_average: expected=159.88; actual=159.88
+PASS q4_buyers_repeat: expected={'customers': '96096', 'repeat_customers': '2997', 'repeat_percentage': '3.12'}; actual={'customers': '96096', 'repeat_customers': '2997', 'repeat_percentage': '3.12'}
+PASS q5_categories: expected=74; actual=74
+PASS q5_top: expected=['beleza_saude', Decimal('1233131.72'), Decimal('9.33')]; actual=['beleza_saude', Decimal('1233131.72'), Decimal('9.33')]
+PASS q5_total: expected=13221498.11; actual=13221498.11
+PASS q5_current_revenue: expected=13221498.11; actual=13221498.11
+PASS q6_winner_prices: expected=31; actual=31
+PASS q6_units: expected=151; actual=151
+PASS q6_current_units: expected=151; actual=151
+PASS q6_current_prices: expected=31; actual=31
+PASS q6_unique_date_price: expected=76; actual=76
+PASS q7_states: expected=17; actual=17
+PASS q7_sp: expected=['40495', '8.76', '4.49']; actual=['40495', '8.76', '4.49']
+PASS q7_minimum_orders: expected=True; actual=True
+PASS q7_current_states: expected=['BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PR', 'RJ', 'RS', 'SC', 'SP']; actual=['BA', 'CE', 'DF', 'ES', 'GO', 'MA', 'MG', 'MS', 'MT', 'PA', 'PB', 'PE', 'PR', 'RJ', 'RS', 'SC', 'SP']
+PASS q7_current_orders: expected=93944; actual=93944
+PASS q8_orders: expected=99441; actual=99441
+PASS q8_without_items: expected=775; actual=775
+PASS q8_current_orders: expected=99441; actual=99441
+PASS q8_current_without_items: expected=775; actual=775
+PASS q8_current_statuses: expected=8; actual=8
+PASS q9_states_2018: expected=56015; actual=56015
+PASS q9_methods_all_period: expected=103886; actual=103886
+PASS q9_current_states_count: expected=56015; actual=56015
+PASS q9_current_states_amount: expected=8699763.05; actual=8699763.05
+PASS q9_current_methods_count: expected=103886; actual=103886
+PASS q9_credit_card: expected=['76795', '3.51']; actual=['76795', '3.51']
+PASS q10_scores: expected=[1, 2, 3, 4, 5]; actual=[1, 2, 3, 4, 5]
+PASS q10_current_memberships: expected=96019; actual=96019
+PASS q10_baseline_counts: expected=[9384, 2938, 7943, 18943, 56811]; actual=[9384, 2938, 7943, 18943, 56811]
+PASS q4_current_customers: expected=96096; actual=96096
+PASS q4_current_repeat: expected=2997; actual=2997
+PASS q5_current_categories: expected=['__unknown__', 'agro_industria_e_comercio', 'alimentos', 'alimentos_bebidas', 'artes', 'artes_e_artesanato', 'artigos_de_festas', 'artigos_de_natal', 'audio', 'automotivo', 'bebes', 'bebidas', 'beleza_saude', 'brinquedos', 'cama_mesa_banho', 'casa_conforto', 'casa_conforto_2', 'casa_construcao', 'cds_dvds_musicais', 'cine_foto', 'climatizacao', 'consoles_games', 'construcao_ferramentas_construcao', 'construcao_ferramentas_ferramentas', 'construcao_ferramentas_iluminacao', 'construcao_ferramentas_jardim', 'construcao_ferramentas_seguranca', 'cool_stuff', 'dvds_blu_ray', 'eletrodomesticos', 'eletrodomesticos_2', 'eletronicos', 'eletroportateis', 'esporte_lazer', 'fashion_bolsas_e_acessorios', 'fashion_calcados', 'fashion_esporte', 'fashion_roupa_feminina', 'fashion_roupa_infanto_juvenil', 'fashion_roupa_masculina', 'fashion_underwear_e_moda_praia', 'ferramentas_jardim', 'flores', 'fraldas_higiene', 'industria_comercio_e_negocios', 'informatica_acessorios', 'instrumentos_musicais', 'la_cuisine', 'livros_importados', 'livros_interesse_geral', 'livros_tecnicos', 'malas_acessorios', 'market_place', 'moveis_colchao_e_estofado', 'moveis_cozinha_area_de_servico_jantar_e_jardim', 'moveis_decoracao', 'moveis_escritorio', 'moveis_quarto', 'moveis_sala', 'musica', 'papelaria', 'pc_gamer', 'pcs', 'perfumaria', 'pet_shop', 'portateis_casa_forno_e_cafe', 'portateis_cozinha_e_preparadores_de_alimentos', 'relogios_presentes', 'seguros_e_servicos', 'sinalizacao_e_seguranca', 'tablets_impressao_imagem', 'telefonia', 'telefonia_fixa', 'utilidades_domesticas']; actual=['__unknown__', 'agro_industria_e_comercio', 'alimentos', 'alimentos_bebidas', 'artes', 'artes_e_artesanato', 'artigos_de_festas', 'artigos_de_natal', 'audio', 'automotivo', 'bebes', 'bebidas', 'beleza_saude', 'brinquedos', 'cama_mesa_banho', 'casa_conforto', 'casa_conforto_2', 'casa_construcao', 'cds_dvds_musicais', 'cine_foto', 'climatizacao', 'consoles_games', 'construcao_ferramentas_construcao', 'construcao_ferramentas_ferramentas', 'construcao_ferramentas_iluminacao', 'construcao_ferramentas_jardim', 'construcao_ferramentas_seguranca', 'cool_stuff', 'dvds_blu_ray', 'eletrodomesticos', 'eletrodomesticos_2', 'eletronicos', 'eletroportateis', 'esporte_lazer', 'fashion_bolsas_e_acessorios', 'fashion_calcados', 'fashion_esporte', 'fashion_roupa_feminina', 'fashion_roupa_infanto_juvenil', 'fashion_roupa_masculina', 'fashion_underwear_e_moda_praia', 'ferramentas_jardim', 'flores', 'fraldas_higiene', 'industria_comercio_e_negocios', 'informatica_acessorios', 'instrumentos_musicais', 'la_cuisine', 'livros_importados', 'livros_interesse_geral', 'livros_tecnicos', 'malas_acessorios', 'market_place', 'moveis_colchao_e_estofado', 'moveis_cozinha_area_de_servico_jantar_e_jardim', 'moveis_decoracao', 'moveis_escritorio', 'moveis_quarto', 'moveis_sala', 'musica', 'papelaria', 'pc_gamer', 'pcs', 'perfumaria', 'pet_shop', 'portateis_casa_forno_e_cafe', 'portateis_cozinha_e_preparadores_de_alimentos', 'relogios_presentes', 'seguros_e_servicos', 'sinalizacao_e_seguranca', 'tablets_impressao_imagem', 'telefonia', 'telefonia_fixa', 'utilidades_domesticas']
+PASS q10_baseline_days: expected=['21.31', '16.65', '14.26', '12.31', '10.68']; actual=['21.31', '16.65', '14.26', '12.31', '10.68']
+PASS q10_baseline_late: expected=['36.58', '18.86', '8.79', '3.44', '1.86']; actual=['36.58', '18.86', '8.79', '3.44', '1.86']
+PASS q2_unique_groups: expected=10; actual=10
+PASS q5_unique_groups: expected=74; actual=74
+PASS q7_unique_groups: expected=17; actual=17
+PASS q8_unique_groups: expected=8; actual=8
+PASS q9states_unique_groups: expected=27; actual=27
+PASS q9methods_unique_groups: expected=5; actual=5
+PASS q7_valid_percentages: expected=True; actual=True
+PASS q8_valid_percentages: expected=True; actual=True
+PASS q10_valid_percentages: expected=True; actual=True
+PASS q8_current_percentages: expected=True; actual=True
+Answer checks: {'PASS': 56, 'WARN': 0, 'FAIL': 0}
+
+BUILD SUMMARY
+Model: {'PASS': 56, 'WARN': 9, 'FAIL': 0} Answers: {'PASS': 56, 'WARN': 0, 'FAIL': 0}
+Original-source controls differing: 0
+Source changed: False []
+Build complete; raw unchanged; verified exports: /var/folders/xs/btjbnkpd2dbg_7z4qvhzjtr40000gn/T/capibara-rebuild-9tlprjib/fresh/answers
 Building 00_schema.sql
 Building 10_dim_date.sql
 Building 11_dim_order_status.sql
@@ -172,3 +305,5 @@ Building 23_fct_reviews.sql
 Building 24_order_rollups.sql
 Building 30_mart_order_metrics.sql
 Building 40_indexes.sql
+
+SQL: DROP DATABASE IF EXISTS "rwb_probe_8b4e40fa6a754684" WITH (FORCE);

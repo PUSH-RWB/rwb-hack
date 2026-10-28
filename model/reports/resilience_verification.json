@@ -1,0 +1,82 @@
+{
+  "checked_at_utc": "2026-10-28T14:08:23.962188+00:00",
+  "main_raw_not_modified": true,
+  "tests": {
+    "future_date": {
+      "passed": true,
+      "model_checks": {
+        "PASS": 55,
+        "WARN": 10,
+        "FAIL": 0
+      },
+      "answer_checks": {
+        "PASS": 55,
+        "WARN": 1,
+        "FAIL": 0
+      },
+      "snapshot_answer_mismatches": 1,
+      "source_changed": true,
+      "changed_tables": [
+        "raw.orders"
+      ]
+    },
+    "new_order": {
+      "passed": true,
+      "model_checks": {
+        "PASS": 49,
+        "WARN": 16,
+        "FAIL": 0
+      },
+      "answer_checks": {
+        "PASS": 44,
+        "WARN": 12,
+        "FAIL": 0
+      },
+      "snapshot_answer_mismatches": 12,
+      "source_changed": true,
+      "changed_tables": [
+        "raw.customers",
+        "raw.order_items",
+        "raw.order_payments",
+        "raw.order_reviews",
+        "raw.orders"
+      ]
+    },
+    "unknown_status": {
+      "passed": true,
+      "model_checks": {
+        "PASS": 54,
+        "WARN": 11,
+        "FAIL": 0
+      },
+      "answer_checks": {
+        "PASS": 56,
+        "WARN": 0,
+        "FAIL": 0
+      },
+      "snapshot_answer_mismatches": 0,
+      "source_changed": true,
+      "changed_tables": [
+        "raw.orders"
+      ]
+    },
+    "category_history": {
+      "passed": true,
+      "old_answers_byte_identical_after_change": true,
+      "past_attribution_unchanged": true,
+      "boundary_uses_new_version": true,
+      "new_sales_use_new_version": true,
+      "repeat_idempotent": true,
+      "return_to_previous_category_creates_third_version": true,
+      "backdated_change_rejected_and_rolled_back": true
+    },
+    "customer_move": {
+      "passed": true,
+      "old_and_new_order_addresses_preserved": true,
+      "full_address_preservation_report": "customer_address_verification.json"
+    }
+  },
+  "seconds": 354.34,
+  "main_raw_verification_report": "customer_address_verification.json",
+  "main_raw_verified_after_scenarios": true
+}

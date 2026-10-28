@@ -3,12 +3,13 @@ chronology_flags,WARN,1382,SOURCE,WARN,"Нарушения хронологии 
 delivered_payment_gap,WARN,633,SOURCE,goods+freight minus payments = 2001.88,Разница общих сумм включает заказ без платежа; сумма известных индивидуальных разниц отличается
 delivered_without_date,WARN,8,SOURCE,8,Ожидаемая аномалия источника; заказ сохранён
 geography_ambiguity,WARN,33,SOURCE,33,Префикс не гарантирует единственный штат; исходные адреса сохранены
+non_revenue_with_delivery_date,WARN,6,SOURCE,WARN,Для Q7/Q10 используем фактическую дату вручения; противоречивый статус виден отдельно
 orders_without_items,WARN,775,SOURCE,775,Заказы без товарных позиций сохранены
 orders_without_payments,WARN,1,SOURCE,1,Отсутствующий платёж не равен нулевому
 orders_without_reviews,WARN,768,SOURCE,768,Отзыв необязателен
 zero_installments,WARN,2,SOURCE,2,Нулевые installments сохраняются; payment_value не умножается
-categories,PASS,0,MODEL,74; unknown products=610,Пустая категория сохранена отдельно
-category_translation,PASS,0,MODEL,13,"Две категории без перевода, 13 товаров сохранены"
+categories,PASS,0,SNAPSHOT,74; unknown products=610,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+category_translation,PASS,0,SNAPSHOT,13,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 delivery_before_purchase,PASS,0,SOURCE,0,Даты не переставляются автоматически
 fk_dim_seller_zip_code_prefix,PASS,0,MODEL,0,Ссылочная целостность
 fk_fct_order_items_customer_unique_id,PASS,0,MODEL,0,Ссылочная целостность
@@ -24,29 +25,32 @@ fk_fct_orders_purchase_date,PASS,0,MODEL,0,Ссылочная целостнос
 fk_fct_payments_order_id,PASS,0,MODEL,0,Ссылочная целостность
 fk_fct_reviews_order_id,PASS,0,MODEL,0,Ссылочная целостность
 item_denormalization,PASS,0,MODEL,0,Денормализованные поля согласованы с заказом и статусом
+item_product_asof,PASS,0,MODEL,0,"Позиция ссылается на версию, действовавшую при оформлении"
 mart_order_grain,PASS,0,MODEL,0,Витрина не размножает и не теряет заказы
 missing_money_is_null,PASS,0,MODEL,0,Неизвестные суммы не заменены нулём
 order_value_identity,PASS,0,MODEL,0,"Чек = товары + доставка, включая семантику NULL"
-payment_gap_control,PASS,0,MODEL,2001.88,Сохранение известного расхождения источников; не исправлять
+payment_gap_control,PASS,0,SNAPSHOT,2001.88,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 payment_sums,PASS,0,MODEL,0,Сохранность платежей и их свёрток
+product_history_conservation,PASS,0,MODEL,0,Пересборка не теряет сохранённые версии
+product_version_intervals,PASS,0,MODEL,0,"Версии без пересечений и разрывов, последняя открыта"
 raw_conservation_fct_order_items,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_conservation_fct_orders,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_conservation_fct_payments,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_conservation_fct_reviews,PASS,0,MODEL,0,Ни одна исходная запись не потеряна
 raw_sum_freight_value,PASS,0,MODEL,0,Сумма сохранена относительно raw
 raw_sum_price,PASS,0,MODEL,0,Сумма сохранена относительно raw
-revenue,PASS,0,MODEL,13221498.11,Стоимость доставленных товаров без доставки
+revenue,PASS,0,SNAPSHOT,13221498.11,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 review_counts,PASS,0,MODEL,0,Сохранность отзывов в свёртке
-rows_dim_customer,PASS,0,MODEL,96096,Число строк фиксированного снимка
-rows_dim_date,PASS,0,MODEL,1096,Число строк фиксированного снимка
-rows_dim_geography,PASS,0,MODEL,15080,Число строк фиксированного снимка
-rows_dim_order_status,PASS,0,MODEL,8,Число строк фиксированного снимка
-rows_dim_product,PASS,0,MODEL,32951,Число строк фиксированного снимка
-rows_dim_seller,PASS,0,MODEL,3095,Число строк фиксированного снимка
-rows_fct_order_items,PASS,0,MODEL,112650,Число строк фиксированного снимка
-rows_fct_orders,PASS,0,MODEL,99441,Число строк фиксированного снимка
-rows_fct_payments,PASS,0,MODEL,103886,Число строк фиксированного снимка
-rows_fct_reviews,PASS,0,MODEL,99224,Число строк фиксированного снимка
+rows_dim_customer,PASS,0,SNAPSHOT,96096,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_date,PASS,0,SNAPSHOT,1826,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_geography,PASS,0,SNAPSHOT,15080,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_order_status,PASS,0,SNAPSHOT,8,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_product,PASS,0,SNAPSHOT,32951,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_dim_seller,PASS,0,SNAPSHOT,3095,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_order_items,PASS,0,SNAPSHOT,112650,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_orders,PASS,0,SNAPSHOT,99441,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_payments,PASS,0,SNAPSHOT,103886,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
+rows_fct_reviews,PASS,0,SNAPSHOT,99224,"Ожидание исходного снимка; при новых данных пересмотреть эталон, не исправлять модель"
 sum_freight_amount,PASS,0,MODEL,0,Денежная свёртка совпадает с деталью
 sum_item_amount,PASS,0,MODEL,0,Денежная свёртка совпадает с деталью
 unique_dim_customer,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
@@ -59,3 +63,4 @@ unique_fct_order_items,PASS,0,MODEL,0,Уникальность объявлен�
 unique_fct_orders,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
 unique_fct_payments,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
 unique_fct_reviews,PASS,0,MODEL,0,Уникальность объявленного первичного ключа
+unknown_order_status,PASS,0,SNAPSHOT,0,Новые статусы не включены в выручку; требуется классификация человеком
