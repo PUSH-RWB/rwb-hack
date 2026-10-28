@@ -1,0 +1,14 @@
+{
+  "q1_24_months": true,
+  "q1_empty_month": true,
+  "q1_total": true,
+  "q2_ten_sellers": true,
+  "q2_top_seller": true,
+  "q3_average": true,
+  "q3_lines_units": true,
+  "q3_orders": true,
+  "q4_buyers_repeat": true,
+  "q5_categories": true,
+  "q5_top": true,
+  "q5_total": true
+}

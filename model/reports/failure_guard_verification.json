@@ -1,0 +1,7 @@
+{
+  "injected_defect_detected": true,
+  "failed_check": "item_denormalization",
+  "failed_check_violations": 1,
+  "transaction_rolled_back": true,
+  "all_core_hashes_unchanged": true
+}

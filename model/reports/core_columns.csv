@@ -1,0 +1,92 @@
+table_name,column_name,data_type,is_nullable
+dim_customer,customer_unique_id,text,NO
+dim_date,date_key,date,NO
+dim_date,year,smallint,NO
+dim_date,quarter,smallint,NO
+dim_date,month,smallint,NO
+dim_date,month_key,text,NO
+dim_date,day_of_month,smallint,NO
+dim_date,day_of_week,smallint,NO
+dim_date,is_weekend,boolean,NO
+dim_geography,zip_code_prefix,text,NO
+dim_geography,city,text,YES
+dim_geography,state,text,YES
+dim_geography,city_variant_count,integer,NO
+dim_geography,state_variant_count,integer,NO
+dim_geography,source_row_count,integer,NO
+dim_order_status,order_status,text,NO
+dim_order_status,is_revenue,boolean,NO
+dim_order_status,is_terminal,boolean,NO
+dim_order_status,is_canceled,boolean,NO
+dim_order_status,is_shipped_out,boolean,NO
+dim_product,product_id,text,NO
+dim_product,category_name_pt,text,NO
+dim_product,category_name_en,text,YES
+dim_product,category_name_display,text,NO
+dim_product,has_category,boolean,NO
+dim_product,product_name_length,integer,YES
+dim_product,product_description_length,integer,YES
+dim_product,product_photos_qty,integer,YES
+dim_product,product_weight_g,integer,YES
+dim_product,product_length_cm,integer,YES
+dim_product,product_height_cm,integer,YES
+dim_product,product_width_cm,integer,YES
+dim_product,product_volume_cm3,bigint,YES
+dim_seller,seller_id,text,NO
+dim_seller,zip_code_prefix,text,YES
+dim_seller,city,text,YES
+dim_seller,state,text,YES
+fct_order_items,order_id,text,NO
+fct_order_items,order_item_id,integer,NO
+fct_order_items,product_id,text,NO
+fct_order_items,seller_id,text,NO
+fct_order_items,shipping_limit_at,timestamp without time zone,YES
+fct_order_items,price,numeric,NO
+fct_order_items,freight_value,numeric,NO
+fct_order_items,purchase_date,date,NO
+fct_order_items,order_status,text,NO
+fct_order_items,is_revenue,boolean,NO
+fct_order_items,customer_unique_id,text,NO
+fct_orders,order_id,text,NO
+fct_orders,source_customer_id,text,NO
+fct_orders,customer_unique_id,text,NO
+fct_orders,customer_zip_code_prefix,text,YES
+fct_orders,customer_city_source,text,YES
+fct_orders,customer_state_source,text,YES
+fct_orders,order_status,text,NO
+fct_orders,purchase_at,timestamp without time zone,NO
+fct_orders,purchase_date,date,NO
+fct_orders,approved_at,timestamp without time zone,YES
+fct_orders,delivered_carrier_at,timestamp without time zone,YES
+fct_orders,delivered_customer_at,timestamp without time zone,YES
+fct_orders,estimated_delivery_at,timestamp without time zone,YES
+fct_orders,delivery_days,numeric,YES
+fct_orders,estimate_days,integer,YES
+fct_orders,delay_days,integer,YES
+fct_orders,is_late,boolean,YES
+fct_orders,has_chronology_anomaly,boolean,NO
+fct_orders,item_count,integer,NO
+fct_orders,seller_count,integer,NO
+fct_orders,item_amount,numeric,YES
+fct_orders,freight_amount,numeric,YES
+fct_orders,order_amount,numeric,YES
+fct_orders,payment_count,integer,NO
+fct_orders,payment_amount,numeric,YES
+fct_orders,payment_delta,numeric,YES
+fct_orders,review_count,integer,NO
+fct_orders,review_score_avg,numeric,YES
+fct_orders,has_items,boolean,NO
+fct_orders,has_payments,boolean,NO
+fct_orders,has_reviews,boolean,NO
+fct_payments,order_id,text,NO
+fct_payments,payment_sequential,integer,NO
+fct_payments,payment_type,text,YES
+fct_payments,payment_installments,integer,YES
+fct_payments,payment_value,numeric,NO
+fct_reviews,order_id,text,NO
+fct_reviews,review_id,text,NO
+fct_reviews,review_score,smallint,NO
+fct_reviews,review_comment_title,text,YES
+fct_reviews,review_comment_message,text,YES
+fct_reviews,review_creation_at,timestamp without time zone,YES
+fct_reviews,review_answer_at,timestamp without time zone,YES

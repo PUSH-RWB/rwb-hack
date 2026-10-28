@@ -1,0 +1,5 @@
+# Preserve organizers' compose file. Requires Compose >= 2.24.4.
+services:
+  postgres:
+    ports: !override
+      - "127.0.0.1:5433:5432"

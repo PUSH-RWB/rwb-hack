@@ -1,0 +1,9 @@
+table_name,row_count,payload_hash
+raw.customers,99441,0e6c5523295db4dd95fa13830d3c9e78
+raw.order_items,112650,e55d1a23f8acea1d040107f82b1bba2e
+raw.order_payments,103886,bfa94428cdbddb5bae5f1959bf46c463
+raw.order_reviews,99224,02766859c6dea00ffe9e7924757678fd
+raw.orders,99441,6ddefd221ae3e203a560342c373d759c
+raw.product_category_translation,71,53b14b4da75f3d226f028223b2ea723c
+raw.products,32951,2d70a0fcbaa9f4233218ed878f888e82
+raw.sellers,3095,7df5d913c1b90e1c1efecb9b733baa1b

@@ -1,0 +1,2 @@
+delivered_orders,order_amount,payment_amount,total_amount_gap,comparable_order_gap,missing_payment_orders,missing_payment_order_amount
+96478,15424463.65,15422461.77,2001.88,1858.42,1,143.46

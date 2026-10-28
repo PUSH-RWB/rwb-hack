@@ -1,48 +1,60 @@
-# Capibara — решение команды RWB
+# Capibara — SQL-модель команды RWB
 
-Материалы организаторов сохранены в README.md, docs/, scripts/ и docker-compose.yml. Наше решение находится в model/.
+Реализованы модель core, витрина уровня заказа, автоматические проверки и пять ответов, рассчитанных исключительно из core. Исходные README.md, docs/, scripts/ и docker-compose.yml организаторов сохранены.
 
-Текущий результат: выполненное исследование исходных данных вокруг пяти вопросов хакатона, проверка контрольных значений, графики и выводы для будущей модели core. SQL-модель и окончательные ответы из core пока не реализованы.
-
-## Что открыть экспертам
-
-- [HTML-отчёт с графиками, без кода](model/reports/01_eda.html) — можно открыть в браузере без Jupyter.
-- [Выполненный EDA-ноутбук](model/notebooks/01_eda.ipynb) — полный воспроизводимый расчёт.
-- [Проблемы данных и правила обработки](model/docs/data_quality.md).
-- [Определения метрик](model/docs/metrics.md).
-- [Графики для презентации](model/reports/figures/).
-- [Результат выполнения](model/reports/execution_summary.json).
-
-## Структура нашего решения
-
-- model/notebooks/ — исследование данных.
-- model/reports/ — вычисленные результаты и графики; source_check_*.csv относятся к исходникам.
-- model/docs/ — бизнес-правила, находки, журнал работы с ИИ.
-- model/sql/ — место для реализации core после согласования модели.
-- model/checks/ — место для SQL-проверок.
-- model/answers/ — место для финальных запросов и их вывода из core.
-- model/presentation/ — рекомендации по использованию готовых материалов.
-
-## Воспроизведение EDA
-
-Из корня репозитория, Python 3.11+:
+## Запуск в текущем окружении
 
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r model/requirements.txt
-python model/run_eda.py
+bash model/setup.sh
+bash model/build.sh
 ```
 
-Если зависимости уже установлены, достаточно `python3 model/run_eda.py`.
+Требования: Docker Desktop, Docker Compose >= 2.24.4 и Python 3 со стандартной библиотекой. pandas и psycopg не нужны для SQL-сборки. Для EDA зависимости перечислены отдельно в model/requirements.txt.
 
-Восемь оригинальных CSV находятся в data/ и исключены из Git. Для нового checkout их можно получить штатным `bash scripts/download_data.sh`. Контрольные суммы исследованной версии находятся в data/source_manifest.json. При изменении исходников ноутбук остановится на сверке SHA-256: новую версию нужно исследовать и зафиксировать явно.
+model/setup.sh использует исходный compose и model/docker-compose.local.yml: PostgreSQL 16 доступен как postgresql://hack:hack@localhost:5433/marketplace. Порт 5432 и файл организаторов не изменяются. Первичная загрузка выполняется серверным COPY с явными колонками; служебные поля raw заполняются при INSERT. Уже заполненная raw не перезагружается, неожиданный состав или количество строк приводит к остановке. В data/ должны находиться восемь CSV; их скачивает штатный scripts/download_data.sh. Дополнительная геолокация не загружается в raw.
 
-Дополнительная геолокация находится отдельно в data/extra/. Она не участвует в ответах на пять вопросов, поскольку не входит в исходные восемь таблиц raw хакатона.
+Штатный scripts/setup.sh остаётся доступен для окружения со свободным 5432 и установленным драйвером. Для этой машины используется model/setup.sh, чтобы сохранить исходные файлы и избежать конфликта портов.
 
-## Git
+## Сборка и результаты
 
-- origin — https://github.com/PUSH-RWB/rwb-hack.git
-- upstream — https://github.com/daniilivanovp-droid/hackathon-students.git
+model/build.sh выполняет нумерованные SQL-файлы с ON_ERROR_STOP в одной транзакции REPEATABLE READ, пересоздавая только core и mart. В конце запускаются проверки; FAIL откатывает сборку. Затем экспортируются пять ответов и выполняются 12 независимых проверок контрольных значений. Сверка fingerprints подтверждает неизменность raw payload, включая _source_file; исключён только технический _loaded_at для сравнения разных чистых баз.
 
-Работа ведётся локально. Коммиты и push в рамках подготовки этого исследования не выполнялись.
+- [Архитектура, ключи и связи](model/docs/data_model.md).
+- [Короткая записка о решениях](model/docs/decisions.md).
+- [Бизнес-правила](model/docs/metrics.md).
+- [SQL сборки](model/sql/).
+- [60 проверок качества](model/checks/dq_checks.sql).
+- [Фактический вывод проверок](model/reports/dq_results.csv).
+- [Пять SQL-запросов](model/answers/).
+- [Полный вывод запросов](model/answers/results/).
+- [Численные ответы и пояснения](model/reports/core_results.md).
+
+Отдельный запрос можно выполнить без пересборки:
+
+```bash
+bash model/psql.sh --csv -f - < model/answers/q01_monthly_revenue.sql
+```
+
+По умолчанию используется контейнер hack_postgres, пользователь hack, база marketplace. PG_CONTAINER, PGUSER и PGDATABASE позволяют выбрать другую конфигурацию контейнера. DATABASE_URL переключает model/psql.sh на локальный psql; серверный COPY требует доступного серверу каталога /data.
+
+## Проверка воспроизводимости
+
+```bash
+python3 model/checks/verify_rebuild.py
+```
+
+Проверка повторяет сборку в той же базе, затем создаёт отдельную чистую тестовую БД, загружает её из CSV и повторяет сборку. Сравниваются содержимое десяти таблиц core, восьми таблиц raw, пять CSV ответов и результаты DQ. Созданная проверкой временная БД удаляется, основная raw сохраняется.
+
+Результат: [rebuild_verification.json](model/reports/rebuild_verification.json); детали запуска: [rebuild_verification.log](model/reports/rebuild_verification.log).
+
+## EDA для экспертов
+
+- [HTML с девятью графиками](model/reports/01_eda.html).
+- [Выполненный ноутбук](model/notebooks/01_eda.ipynb).
+- [Выводы EDA](model/docs/data_quality.md).
+
+EDA и source_check_*.csv — независимые расчёты по исходным CSV. Финальные SQL-ответы находятся в model/answers/results/.
+
+## Репозиторий
+
+origin: https://github.com/PUSH-RWB/rwb-hack.git. Работа выполняется локально; публикация изменений — отдельное действие команды.
